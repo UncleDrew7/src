@@ -1,0 +1,23 @@
+extra.totalTeacher = 全部老师
+extra.examEnrollmentRequests = 考试报名要求
+extra.courseEnrollmentRequests = 课程注册申请总数
+extra.view = 看见
+enrollmentList.ExamId = 考试号码
+enrollmentList.ExamName = 考试名称
+enrollmentList.examDate = 考试日期
+enrollmentList.deadline = 截止报名日期
+enrollmentList.examAttempts = 考试的尝试
+enrollmentList.examEnrollmentList = 考试报名表
+adminNavLable.manageExams = 管理考试
+enrollStudent.examEnrollment = 考试报名
+首页
+
+extra.reportFor = 成绩报告
+extra.type = 类型
+
+extra.enrolmentStatus = 报名状态
+extra.examEnrolment = 考试报名
+extra.courseEnrolment = 课程报名
+
+extra.showLess = 见少
+

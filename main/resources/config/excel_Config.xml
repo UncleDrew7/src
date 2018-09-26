@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <bean id="excelView" class="com.cdai.util.test.ExcelBuilder" />
+
+    <!--same view name as that stated in the controller -->
+    <bean id="excelTemplate" class="com.cdai.util.excelHelpers.ExcelTeacherTemplateBuilder" />
+    <bean id="stdExcelTemplate" class="com.cdai.util.excelHelpers.ExcelStudentTemplateBuilder"/>
+    <bean id="crsExcelTemplate" class="com.cdai.util.excelHelpers.ExcelCourseTemplateBuilder"/>
+    <bean id="pcrsExcelTemplate" class="com.cdai.util.excelHelpers.ExcelParentCourseTemplateBuilder"/>
+    <bean id="classExcelTemplate" class="com.cdai.util.excelHelpers.ExcelClassTemplateBuilder"/>
+    <bean id="examExcelTemplate" class="com.cdai.util.excelHelpers.ExcelExamTemplateBuilder"/>
+    <bean id="stdEnrolmentExcelTemplate" class="com.cdai.util.excelHelpers.ExcelStudentEnrolmentTemplateBuilder"/>
+    <bean id="stdGradeExcelTemplate" class="com.cdai.util.excelHelpers.ExcelStudentGradeTemplateBuilder"/>
+    <bean id="stdFinalGradeExcelTemplate" class="com.cdai.util.excelHelpers.ExcelStudentFinalGradeTemplateBuilder"/>
+    <bean id="stdFinalGradeExcelTemplateH" class="com.cdai.util.excelHelpers.ExcelStudentFinalGradeTemplateBuilderH"/>
+    <bean id="stdRetakeGradeExcelTemplate" class="com.cdai.util.excelHelpers.ExcelStudentRetakeGradeTemplateBuilder"/>
+
+</beans>

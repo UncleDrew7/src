@@ -1,0 +1,10 @@
+h1{
+    color: yellow;
+}
+.bigCardContainer{
+ margin-bottom: 30px;
+ }
+
+.tabSelectList a{
+    color: inherit;
+}

@@ -1,0 +1,900 @@
+nava
+  <ul class="breadcrumbs">
+             <li class="first">
+                 <div class="dropdown">
+                     <div class="mainLk">
+                         <a href="${url}/admin/grades/grade-items/${courseId}" class="icon-home mainLink"><spring:message code="addGrades.gradeItems" /></a>
+                     </div>
+                     <div class="dropdown-content">
+                         <a href="${url}/admin/course/grade/overview/${courseId}"><spring:message code="studentGradesOverviewReport.gradeOverView" /></a>
+                         <a href="${url}/admin/view/course/${courseId}"><spring:message code="editCourseForm.coursePage" /></a>
+                         <a href="${url}/admin/course/content/add/${courseId}"><spring:message code="coursePage.addTopic" /></a>
+                         <a href="${url}/admin/manage-courses/enrolment-list/${courseId}/3"><spring:message code="enrollmentList.enrolmentList" /></a>
+                         <a href="${url}/admin/manage-courses/enroll-student/${courseId}/2"><spring:message code="enrollStudent.title" /></a>
+                     </div>
+                 </div>
+             </li>
+             <%--<li class="first"><a href="${url}/admin/grades/grade-items/${courseId}" class="icon-home"><spring:message code="addGrades.gradeItems" /></a></li>--%>
+             <li class="last active"><a href="#"><spring:message code="addGrades.addGrade" /> </a></li>
+         </ul>
+
+
+<sqlLargest>
+
+    CURDATE()>= DATE(gi.date_of_grade_item)
+
+
+SELECT (now() - interval 1 month)
+    BETWEEN now() - interval 3 month AND now()
+
+
+
+    "SELECT  " +
+    "MAX(c.class_id) " +
+    "FROM class c";
+
+    SELECT
+    *
+    FROM course_enrolment cet
+    WHERE cet.student_id = 804
+
+    DELETE FROM course_enrolment WHERE student_id = 804
+
+    SELECT
+    *
+    FROM exam_enrolment ee WHERE ee.student_id = 804
+
+    DELETE FROM exam_enrolment WHERE student_id = 804
+</sqlLargest>
+
+<formTech>
+    https://stackoverflow.com/questions/41207947/how-can-i-send-the-multiple-checkbox-value-in-ajax-and-show-in-different-div
+    http://viralpatel.net/blogs/spring-mvc-multi-row-submit-java-list/
+</formTech>
+<sqlMakeIntBig>
+
+    ALTER TABLE user_settings
+    MODIFY userid BIGINT(20) UNSIGNED ;
+</sqlMakeIntBig>
+
+,@RequestParam("docName") String docName)
+
+<execlPublish>
+    List<ExcelStudent> student = new ArrayList<ExcelStudent>();
+
+    //this is the part where you populate from database
+
+    List<User> list = daoAccess.getClassListByClassId(classId);
+    for(User entity: list){
+    student.add(new ExcelStudent(entity.getUserId(),entity.getUserName()));
+    }
+
+</execlPublish>
+
+<newFormTech>
+    <form  id="uploadTeacherForm" method="POST" enctype="multipart/form-data">
+        <input name="teacherExcelListFile" required type="file">
+        <%--<input type="submit" value="Import Excel File">--%>
+        <!--Button-->
+        <div class="modal-footer">
+            <button type="submit" onclick="uploadTeacherExcel()" value="Import Excel File" class="btn btn-primary btn-block">#Import Excel File</button>
+        </div>
+    </form>
+
+    function uploadTeacherExcel() {
+    var data = new FormData($("#uploadTeacherForm")[0]);
+    $('#importTeacherExcel').modal('toggle');
+
+    $.ajax({
+    url:'${url}/admin/event/add/',
+    type:'post',
+    data:$(this).serialize(),
+    success:function(data){
+    //                alert("worked");
+    var r = confirm("Event added Successfully.Do you want to add another event ?");
+    if (r == true) {
+    location.reload(true);
+    } else{
+    window.location.href = '${url}/admin/dashboard';
+    }
+
+    },
+    error : function(){
+    alert("error");
+    }
+    });
+
+    $('#uploadTeacherForm').submit(function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    $.ajax({
+    url:'${url}/manage-users/add-teacher-excel',
+    type:'post',
+    data:data,
+    contentType: false,
+    processData: false,
+    success:function(data){
+    $("#uploadTeacherForm").get(0).reset();
+    console.log(data.list);
+    if(data.status_code === 406){
+    alert('Error Uploading Data !!');
+
+    $('#modelHeader').empty();
+    $('#userConfirmTable').empty();
+    $('#tableHead').empty();
+    $('#modelHeader').append('<h4 class="alert alert-danger modal-title">Error !!! UserIds Below Already In System</h4>');
+
+    $('#tableHead').append(
+    '<tr>'+
+    '<th>#</th>'+
+    '<th>UserId</th>'+
+    '<th>Name</th>'+
+    '<th>Gender</th>'+
+    '<th>Role</th>'+
+    '</tr>'
+    );
+
+    for (var i = 0, len = data.list.length; i < len; i++) {
+    console.log(data.list[i].userName);
+    $('#userConfirmTable').append(
+    ' <tr>'+
+    '<td>'+(i+1)+'</td>'+
+    '<td>'+data.list[i].userId+'</td>'+
+    '<td>'+data.list[i].firstName+'</td>'+
+    '<td>'+data.list[i].gender+'</td>'+
+    '<td>'+data.list[i].role+'</td>'+
+    '</tr>'
+    );
+    }
+    $('#enrolmentConfirmationTableModel').modal('toggle');
+
+    }if(data.status_code === 200){
+    $('#modelHeader').empty();
+    $('#userConfirmTable').empty();
+    $('#tableHead').empty();
+    //                        $('#addNewUsers').empty()
+    $('#modelHeader').append('<h4 class="alert alert-success modal-title">('+data.list.length+') Students Added Successfully </h4>');
+
+    $('#tableHead').append(
+    '<tr>'+
+    '<th>#</th>'+
+    '<th>UserId</th>'+
+    '<th>Name</th>'+
+    '<th>Gender</th>'+
+    '<th>Role</th>'+
+    '</tr>'
+    );
+
+    for (var i = 0, len = data.list.length; i < len; i++) {
+    console.log(data.list[i].userName);
+    $('#userConfirmTable').append(
+    ' <tr>'+
+    '<td>'+(i+1)+'</td>'+
+    '<td>'+data.list[i].userId+'</td>'+
+    '<td>'+data.list[i].firstName+'</td>'+
+    '<td>'+data.list[i].gender+'</td>'+
+    '<td>double-degree</td>'+
+    '</tr>'
+    );
+
+    $('#addNewUsers').prepend(
+    '<tr class="success">'+
+    '<td>#</td>'+
+    '<td><a  href="${url}/admin/profile/view/'+data.list[i].userId+'">'+data.list[i].firstName+'</a> </td>'+
+    '<td>'+data.list[i].userId+'</td>'+
+    '<td>'+data.list[i].role+'</td>'+
+    '<td>'+data.list[i].gender+'</td>'+
+    '<td></td>'+
+    '<td>'+data.list[i].country+'</td>'+
+    '<td>Never</td>'+
+    '<td>'+
+        '<div class="dropdown">'+
+            '<button class="btn btn-danger btn-xs" type="button" data-toggle="dropdown"><spring:message code="manageUsers.action" />'+
+                '<span class="caret"></span></button>'+
+            '<ul class="dropdown-menu dropdown-menu-right">'+
+                '<li><a href="${url}/admin/profile/view/'+data.list[i].userId+'">#View    &nbsp;&nbsp;&nbsp;&nbsp;<span class="inIcon glyphicon glyphicon-user" aria-hidden="true"></span></a></li>'+
+                '<li><a href="${url}/admin/profile/edit/'+data.list[i].userId+'/2"><spring:message code="coursePage.edit" />    &nbsp;&nbsp;&nbsp;&nbsp; <span class="inIcon glyphicon glyphicon-pencil" aria-hidden="true"></span></a></li>'+
+                '<li><a style="cursor: pointer" onclick="disableUser('+data.list[i].userId+')"> <spring:message code="coursePage.delete" />  &nbsp; <span class="inIcon glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>'+
+                '</ul>'+
+            '</div>'+
+        '</td>'+
+    '</tr>'
+    );
+
+    }
+    $('#enrolmentConfirmationTableModel').modal('toggle');
+    }
+    if(data.status_code === 500){
+    alert("Sytem Error Could not Upload");
+    }
+    },
+    error : function(data){
+    alert(data);
+    }
+    });
+    });
+    }
+</newFormTech>
+
+<updateManul-time>
+    java.util.Date date = new java.util.Date();
+    java.sql.Timestamp updateTimestamp = new java.sql.Timestamp(date.getTime());
+</updateManul-time>
+
+<dataTables>
+    <link href="${url}/resources/main/dataTables/datatables.min.css" rel="stylesheet">
+    <script type="text/javascript" src="${url}/resources/main/dataTables/datatables.min.js"></script>
+    <table id="courseTable" class="table table-bordered table-hover">
+    $(document).ready(function() {
+    $('#courseTable').DataTable();enrolmentList
+    $('#semesterTable').DataTable();eRequests
+    } );
+</dataTables>
+<datePicker>
+<link rel="stylesheet" href="${url}/resources/main/jquery/jquery-ui.css">
+<script src="${url}/resources/main/jquery/jquery-ui.min.js"></script>
+
+$( ".datepicker" ).datepicker({
+dateFormat: 'yy-mm-dd'
+})
+datepicker
+
+</datePicker>
+
+<list>
+<script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+<div id="#fullList" class="col-sm-6">
+</list>
+
+<fullcalender>
+<link rel='stylesheet' href="${url}/resources/main/fullcalendar/dist/fullcalendar.min.css" />
+
+<script src="${url}/resources/main/moment/moment.js"></script>
+<script src="${url}/resources/main/fullcalendar/dist/fullcalendar.min.js "></script>
+<script src="${url}/resources/main/fullcalendar/dist/locale/zh-cn.js "></script>
+<script src="${url}/resources/main/fullcalendar/dist/locale/en-gb.js "></script>
+
+$(document).ready(function() {
+
+$('#bootstrapModalFullCalendar').fullCalendar({
+header: {
+left: '',
+center: 'prev title next',
+right: '',
+},
+<c:if test="${pageContext.response.locale eq 'cn'}">
+    locale: 'zh-cn',
+</c:if>
+eventColor:'#777777',
+//eventColor: '#4285F4',
+eventClick:  function(event, jsEvent, view , id) {
+$('#modalTitle').html(event.title);
+$('#modalBody').html(event.description);
+$('#eventUrl').attr('href',event.url);
+$('#deleteEvent');
+$('#fullCalModal').modal();
+return false;
+},
+eventMouseover :function( event, jsEvent, view ) {
+
+},
+//                dayClick:function () {
+//                    alert("day clicked");
+//                },
+events:${calendarEvents},
+height: 400,
+contentHeight: 400,
+//                width:200
+});
+});
+
+</fullcalender>
+<Ripper>
+    Subject currentUser = SecurityUtils.getSubject();
+    int userId = (Integer) currentUser.getPrincipal();
+<postingAButtons>
+    <a onClick="postdata()" prev_id="5" next_id="45">
+
+    function postdata(){
+    $.post("test.php", { id: "1", next_id: "2" },
+    function(data) {
+    alert("Data Loaded: " + data);
+    });
+    }
+
+</postingAButtons>
+    <toolTip>
+        <td><a href="#" data-toggle="tooltip" data-placement="top" title="${row.}">   </a></td>
+    </toolTip>
+
+
+    <ViewDefault>
+
+        <%@page contentType="text/html" pageEncoding="UTF-8"%>
+        <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator" prefix="dec"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+        <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+        <c:set var="url" value="${pageContext.request.contextPath}"></c:set>
+
+        <html lang="en">
+
+            <head>
+                <title>Admin | Publish</title>
+                <link href="${url}/resources/app_admin_static/css/publish.css" rel="stylesheet">
+            </head>
+
+            <body>
+
+                <!--Content Begins  -->
+                <div class="content">
+
+                    <h1>Admin Publish </h1>
+
+
+                </div>
+                <!--Content Ends  -->
+
+            </body>
+
+        </html>
+
+    </ViewDefault>
+
+    (Integer.parseInt(request.getParameter("courseId")));
+
+for date
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+    <jsp:useBean id="dateValue" class="java.util.Date"/>
+
+    <jsp:setProperty name="dateValue" property="time" value="${timestampValue}"/>
+    <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
+
+
+
+    <DataBaseTemplate>
+
+        <%--template database --%>
+        <%@ page import = "java.io.*,java.util.*,java.sql.*"%>
+        <%@ page import = "javax.servlet.http.*,javax.servlet.*" %>
+        <%@ taglib uri = "http://java.sun.com/jsp/jstl/sql" prefix = "sql"%>
+
+
+        <%--TEST DATASOURCE --%>
+        <sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                           url = "jdbc:mysql://localhost/ucms"
+                           user = "root"  password = "lani"/>
+
+        <sql:query dataSource = "${snapshot}" var = "lessonContent">
+            SELECT crl.lesson_id,crl.lesson_name,crl.description,crl.position
+            FROM course_lesson crl
+            WHERE crl.course_id = ?
+            ORDER BY crl.position;
+            <sql:param value="${param.courseId}" />
+        </sql:query>
+
+        <sql:query dataSource = "${snapshot}" var = "result">
+            SELECT exam.exam_name,courses.course_name,exam.enrolment_close_date,exam.date_of_exam
+            FROM exam,courses
+            WHERE exam.course_id = courses.course_id;
+        </sql:query>
+
+        <sql:query dataSource = "${snapshot}" var="p_count">
+            SELECT COUNT(*)
+            FROM exam_student_request_enrolment
+            WHERE enrolment_status = 0;
+        </sql:query>
+
+        <sql:query dataSource = "${snapshot}" var="active_count">
+            SELECT COUNT(*)
+            FROM exam
+            WHERE CURDATE()<= DATE(exam.date_of_exam);
+        </sql:query>
+
+        <sql:query dataSource = "${snapshot}" var="byCouresExamRequests">
+            SELECT courses.course_name ,COUNT(exam_student_request_enrolment.course_id) AS number_of_exams
+            FROM exam_student_request_enrolment,courses
+            WHERE exam_student_request_enrolment.course_id = courses.course_id AND enrolment_status = 0
+            GROUP BY exam_student_request_enrolment.course_id;
+        </sql:query>
+
+        <sql:query dataSource = "${snapshot}" var="numberOfExamRequests">
+            SELECT exam.exam_name ,COUNT(exam_student_request_enrolment.student_id) AS number_of_student_requests
+            FROM exam_student_request_enrolment,exam
+            WHERE exam_student_request_enrolment.exam_id = exam.id AND enrolment_status = 0 AND exam_student_request_enrolment.course_id = 2001
+            GROUP BY exam_student_request_enrolment.exam_id;
+        </sql:query>
+        <%--TEST DATASOURCE --%>
+
+        <c:forEach var = "row" items="${byCouresExamRequests.rows}">
+            <c:out value="${row.}"/>
+        </c:forEach>
+
+            ${p_count.rowsByIndex[0][0]}
+    </DataBaseTemplate>
+
+
+    <settinUpMSQL-on-Update>
+        ALTER TABLE ucms.grade_course_total
+        MODIFY COLUMN updated_at TIMESTAMP DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP;
+    </settinUpMSQL-on-Update>
+
+
+
+
+    <loopTech>
+        <c:set var="count" value="0" scope="page" />
+        <c:forEach var="tableEntity" items='${requestScope.tables}'>
+            <c:forEach var="rowEntity" items='${tableEntity.rows}'>
+                <%=count++%>
+                <c:out value="${count}" />
+            </c:forEach>
+        </c:forEach>
+
+        ====================
+
+        <c:set var="count" value="0" scope="page" />
+
+        //in your loops
+        <c:set var="count" value="${count + 1}" scope="page"/>
+
+
+        =================
+
+        <c:forEach var="tableEntity" items='${requestScope.tables}'>
+            <c:forEach var="rowEntity" items='${tableEntity.rows}' varStatus="count">
+                my count is ${count.count}
+            </c:forEach>
+        </c:forEach>
+    </loopTech>
+
+    <if>
+        <c:if test="${user.age ge 40}">
+            You are over the hill.
+        </c:if>
+    </if>
+
+
+    <ripperRes>
+        >>https://stackoverflow.com/questions/19090153/dynamic-database-table-display-using-jstl
+        >>https://www.mkyong.com/jsf2/jsf-2-repeat-tag-example/
+        >>https://www.mkyong.com/jsf2/jsf-2-datatable-example/
+    </ripperRes>
+
+    <ripperBox>
+        SELECT  ROUND(SUM(gi.weight), 2)  weight_total
+        FROM grade_items gi
+        WHERE gi.course_id = 2001;
+        ======================================
+
+    </ripperBox>
+
+    <springSecurityRes>
+        >>http://www.mkyong.com/spring-security/spring-security-form-login-using-database/
+        >>http://www.journaldev.com/2736/spring-security-example-userdetailsservice
+        >>http://websystique.com/springmvc/spring-mvc-4-and-spring-security-4-integration-example/
+        >L>>https://www.mkyong.com/spring-security/spring-security-hello-world-annotation-example/
+        >>http://www.baeldung.com/spring-security-login
+        >>http://fruzenshtein.com/spring-mvc-security-mysql-hibernate/
+        >>https://docs.spring.io/spring-security/site/docs/current/reference/htmlsingle/#jc-authentication-jdbc
+        >>http://www.concretepage.com/spring/spring-security/spring-mvc-security-jdbc-authentication-example-with-custom-userdetailsservice-and-database-tables-using-java-configuration
+    </springSecurityRes>
+
+
+    <session>
+        public String addInspectionType(InspectionType inspectionType, HttpSession session)
+        {
+        session.setAttribute("user", user);
+        session.getAttribute("user");
+        HttpSession session = request.getSession();
+        session.setAttribute("MyAttribute", "test value");
+        session.getAttribute("MyAttribute")
+        \
+
+        HttpSession session = httpRequest.getSession();
+        session.setAttribute("user", "adam");
+        <getSession>
+            <c:out value="${sessionScope.MyAttribute}" />
+            ${sessionScope.MyAttribute}
+            ${MyAttribute}, ${sessionScope['MyAttribute']}
+
+            Username : ${sessionScope.user}
+        </getSession>
+    </session>
+
+    <converTimeStampToDate>
+        <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+        <jsp:useBean id="dateValue" class="java.util.Date"/>
+        <jsp:setProperty name="dateValue" property="time" value="${timestampValue}"/>
+        <fmt:formatDate value="${dateValue}" pattern="MM/dd/yyyy HH:mm"/>
+    </converTimeStampToDate>
+
+    <FronEndUIRipper>
+        >>https://codepen.io/jlalovi/pen/skeud?limit=all&page=8&q=dashboard
+        >>https://codepen.io/jlalovi/pen/qvknb
+        >>https://codepen.io/g13nn/pen/LhCIg?limit=all&page=10&q=dashboard
+        >>https://codepen.io/jeryj/full/AXVRXJ/
+        >>https://codepen.io/jeryj/pen/AXVRXJ
+        >>https://codepen.io/10tribu/pen/FzGdK
+        >>https://codepen.io/christiannaths/pen/yCHGa?q=admin&limit=all&type=type-pens
+        >>https://codepen.io/anthonykoch/pen/EPGGmJ?limit=all&page=2&q=admin
+        >>https://codepen.io/nateify/pen/ExjIy?limit=all&page=3&q=admin
+        >>https://codepen.io/mariosmaselli/pen/WGwKVg?limit=all&page=4&q=admin
+        >>https://codepen.io/nikazawila/pen/CkaJg?depth=everything&limit=all&order=popularity&page=9&q=dashboard&show_forks=false
+        >>https://codepen.io/Venerons/pen/RWMvYw?depth=everything&limit=all&order=popularity&page=9&q=dashboard&show_forks=false
+        >>https://codepen.io/pranjal-goswami/pen/RNdpOP
+    </FronEndUIRipper>
+
+
+    <updateDesign>
+
+        #COURSE DISPLAY
+        >>https://codepen.io/robinhuy/pen/qjLxRq
+        #FILTERS
+        >>https://codepen.io/erikjung/pen/qmpjYm
+            >>https://codepen.io/tillea/pen/LiKJl
+        >>https://codepen.io/agentmi6/pen/azjWVK
+
+        #TEXT EDITOR
+        >>https://codepen.io/9itish/pen/LEoRPL
+
+        #COURSE LIST
+        >>https://codepen.io/Delano83/pen/XjYxkQ
+        #Upload file Box
+        >>https://codepen.io/Delano83/pen/XjRgZd
+
+        #CONTACT FORM
+        >>https://codepen.io/markmurray/pen/JsAhx
+        #ENROL USERS
+        >>>https://codepen.io/markmurray/pen/aCfiF
+
+        #POP UP CONFIMATIION DIALOG
+        >>https://codepen.io/estrepitos/pen/JAtKr
+
+        #JQUERY UI DATEPICKER
+        >>http://jqueryui.com/datepicker/
+        >>http://www.hongkiat.com/blog/jquery-ui-datepicker/
+
+        #IMAGE GRID
+        >>https://codepen.io/bradfrost/pen/evwgx
+        #CUSTOM 404
+        >>https://codepen.io/ArielBeninca/pen/yyKaPX
+        #GRADE ITEM
+        >>https://codepen.io/virgilpana/pen/gpPvgr
+        #aNIMATED MODEL
+        >>https://codepen.io/danymilham/pen/BypqNQ
+        #BREAD CRUMBS
+        >>https://codepen.io/ajaypatelaj/pen/sgDnj
+        >>https://codepen.io/arkev/pen/DzCKF?depth=everything&limit=all&order=popularity&page=2&q=confirmation+&show_forks=false
+        #TEXT EDITING
+        >>https://codepen.io/ajaypatelaj/pen/zBYYwx
+        #CHANGE VIEW LIST
+        >>https://codepen.io/elmahdim/pen/pIqlh?depth=everything&limit=all&order=popularity&page=4&q=list&show_forks=false
+        <courses>
+            >>https://codepen.io/ajaypatelaj/pen/zIBjJ
+        </courses>
+    </updateDesign>
+
+
+    <gettingParams>
+        You should be using @RequestParam instead of @ModelAttribute, e.g.
+
+        @RequestMapping("/{someID}")
+        public @ResponseBody int getAttr(@PathVariable(value="someID") String id,
+        @RequestParam String someAttr) {
+        }
+        You can even omit @RequestParam altogether if you choose, and Spring will assume that's what it is:
+
+        @RequestMapping("/{someID}")
+        public @ResponseBody int getAttr(@PathVariable(value="someID") String id,
+        String someAttr) {
+        }
+
+    </gettingParams>
+
+
+    <parmeeters>
+        ##if url not like method variable get 404
+        //    /**
+        //     * ENROLL STUDENT  PAGE
+        //     */
+        //    //admin/manage-courses/enroll-student/9007?userId=800
+        //    @RequestMapping(value = "admin/manage-courses/enroll-student/{courseId}",method = RequestMethod.GET)
+        //    public String adminEnrollStudent(@PathVariable int courseId, @RequestParam int userId ,Model model){
+        //
+        //        logger.info("getting Parameter ");
+        //        logger.info(courseId);
+        //        logger.info("getting user");
+        //        logger.info(userId);
+        //        model.addAttribute("courseId",courseId);
+        //
+        //        return "Admin_App/subPages/studentEnrolmentPage";
+        //    }
+
+        =====
+        /**
+        * ENROLL STUDENT  PAGE
+        */
+        //admin/manage-courses/enroll-student/9007
+        @RequestMapping(value = "admin/manage-courses/enroll-student/{courseId}",method = RequestMethod.GET)
+        public String adminEnrollStudent(HttpServletRequest request,@PathVariable int courseId, Model model){
+
+
+        logger.info("getting Parameter ");
+        logger.info(courseId);
+        logger.info("getting user");
+        logger.info( request.getParameter("userId"));
+        model.addAttribute("courseId",courseId);
+
+        return "Admin_App/subPages/studentEnrolmentPage";
+        }
+
+
+        ======get parameters in fron end
+        ${courseId} // for model injected attributes
+
+        ${param.courseId}   /// for ? somth=09 type url parameters
+
+
+    </parmeeters>
+
+    <NotificationDesigns>
+        >>https://codepen.io/damianmuti/pen/GEZoeG
+        >>https://codepen.io/bronsrobin/pen/Kitup?q=notifications&limit=all&order=popularity&depth=everything&show_forks=false
+        >>https://codepen.io/FauzanKhan/pen/PPeBoN
+        >>https://codepen.io/guuibayer/pen/ZWvBxr?depth=everything&limit=all&order=popularity&page=10&q=notifications&show_forks=false
+        >>https://codepen.io/ksantangelo/pen/ObyOaP
+        >>https://codepen.io/jexordexan/pen/zNGZed
+        >>https://codepen.io/jo-asakura/pen/ExsLi
+        >>https://codepen.io/jacopo/pen/grGDm
+        >>https://codepen.io/JaguarDev/pen/ibhys
+        >>https://codepen.io/sean_codes/pen/XMwYqr?depth=everything&limit=all&order=popularity&page=2&q=notifications&show_forks=false
+        >>https://codepen.io/frxnz/pen/HKxCp?q=notifications&limit=all&order=popularity&depth=everything&show_forks=false
+        >>
+        >>
+        >>
+    </NotificationDesigns>
+
+
+    <ListUIDESIGNS>
+        <used>
+            >>https://codepen.io/Delano83/pen/XjYxkQ
+        </used>
+        >>https://codepen.io/kharrop/pen/YWvpRo
+        >>https://codepen.io/nobilelucifero/pen/azjKn
+        >>https://codepen.io/digitalavinash/pen/dXdOob
+        >>https://codepen.io/elliotackland/pen/JEOYGL
+        >>https://codepen.io/cabelhigh12/pen/oWEBEB
+        >>
+        >>https://codepen.io/jnicholes/pen/qeHCg
+        >>https://codepen.io/iMutch/pen/zxZOBM?depth=everything&limit=all&order=popularity&page=2&q=employee+&show_forks=false
+        >>
+    </ListUIDESIGNS>
+
+    <SPRING>
+        <parameters>
+            >>https://docs.spring.io/spring/docs/current/spring-framework-reference/html/mvc.html
+        </parameters>
+        <jdbcTemplates>
+            #api>>https://docs.spring.io/spring/docs/current/spring-framework-reference/html/jdbc.html
+            #exceptions>>https://www.mkyong.com/spring/queryforobject-throws-emptyresultdataaccessexception-when-record-not-found/
+        </jdbcTemplates>
+    </SPRING>
+
+    <JAVA>
+        <date>
+            >>https://examples.javacodegeeks.com/core-java/util/date/java-util-date-example-how-to-use-date/
+        </date>
+    </JAVA>
+
+    <jQUERY-TABLE-JSON>
+        >>http://jsfiddle.net/leisenstein/vy3ux/
+        >>https://www.fourfront.us/blog/store-html-table-data-to-javascript-array
+        >>https://stackoverflow.com/questions/19586075/how-to-handle-table-data-form-submission-in-spring-framework
+        >>https://stackoverflow.com/questions/32316646/converting-user-input-from-html-table-to-json-with-jquery
+    </jQUERY-TABLE-JSON>
+
+    <JavaHAndelingJsonInsert>
+        JSONArray resultList = new JSONArray();
+        String[] names = {"id", "userId", "createDate", "spotType", "spotId", "spotName", "logoUrl"};
+        String[] names2 = {"id", "user_id", "create_date", "spot_type", "spot_id", "spot_name", "logo_url"};
+
+        JSONObject jsonObject  = new JSONObject();
+        JSONObject jb = new JSONObject();
+        jsonObject.put("StudentName", "Bishop");
+        jsonObject.put("StudentId", 801);
+        jsonObject.put("Class", "Kights");
+        jsonObject.put("grade", 80);
+        resultList.add(jsonObject);
+        jb.put("StudentName", "Lani");
+        jb.put("StudentId", 802);
+        jb.put("Class", "IMF");
+        jb.put("grade", 50);
+        resultList.add(jb);
+
+
+
+        for(int i = 0; i < resultList.size(); i++){
+        JSONObject param = resultList.getJSONObject(i);
+        examEnrolment.setStudentId((int)param.get("StudentId"));
+        System.out.println(param.get("StudentId"));
+        int enrollmentStatus = daoAccess.enrollStudentInExam(examEnrolment);
+        if(enrollmentStatus == 1){
+        //make request confrimation here
+        confirm= "STUDENT EXAM ENROLMENT SUCCESS";
+        }
+        else confirm="Failled";
+        //            System.out.println(param.get("grade"));
+        System.out.println(param.get("StudentId")+"::>> " +confirm );
+        }
+
+        }
+
+        ========================
+
+        JSONArray storesArray = new JSONArray(restults);
+
+        for(int i = 0; i < storesArray.length(); i++){
+
+        JSONObject store = storesArray.getJSONObject(i);
+
+        db.execSQL("INSERT INTO stores ( sId, cId, sName, sAddress, sNumber, sSalesman, sCustNum, sPhone ) " +
+        "VALUES ( ?, ?, ?, ?, ?, ?, ?, ? )",
+        new Object [] {
+        store.getString("id"),
+        store.getString("cId"),
+        store.getString("sName"),
+        store.getString("sAddress"),
+        store.getString("sNumber"),
+        store.getString("sSalesman"),
+        store.getString("sCustNm"),
+        store.getString("sPhone")
+        }
+        );
+
+        }
+
+
+        ===========================
+
+        Cursor c = db.rawQuery("SELECT * FROM stores WHERE sSalesman="+RepID+"", null);
+        c.moveToFirst();
+
+        ArrayList<HashMap<String, String>> storeList = new ArrayList<HashMap<String, String>>();
+
+        try {
+
+        while (c.moveToNext()) {
+
+        HashMap<String, String> map = new HashMap<String, String>();
+
+        map.put("sId",  c.getString(c.getColumnIndex("sId")));
+        map.put("sName", c.getString(c.getColumnIndex("sName")));
+        map.put("sAddress", c.getString(c.getColumnIndex("sAddress")));
+        map.put("sNumber", "St #: " + c.getString(c.getColumnIndex("sNumber")));
+        storeList.add(map);
+
+        } catch(Exception e) {
+        Log.e("ListStores", "Error: "+e);
+        }
+
+
+        db.close();
+        c.close();
+
+        ============================
+        Cursor c = db.rawQuery("SELECT * FROM stores WHERE sSalesman="+RepID+"", null);
+
+        c.moveToFirst();
+
+        while (c.isAfterLast() == false) {
+
+        HashMap<String, String> map = new HashMap<String, String>();
+
+        map.put("sId",  c.getString(c.getColumnIndex("sId")));
+        map.put("sName", c.getString(c.getColumnIndex("sName")));
+        map.put("sAddress", c.getString(c.getColumnIndex("sAddress")));
+        map.put("sNumber", "St #: " + c.getString(c.getColumnIndex("sNumber")));
+        storeList.add(map);
+
+        c.moveToNext();
+
+        }
+
+        >>https://www.java-forums.org/new-java/48829-json-array-loop-inserting-into-android-sqlite-database.html
+    >>https://stackoverflow.com/questions/18983185/how-to-create-correct-jsonarray-in-java-using-jsonobject
+        >>https://stackoverflow.com/questions/6697147/json-iterate-through-jsonarray
+    >></String>
+
+    </JavaHAndelingJsonInsert>
+
+<search>
+
+SELECT gi.grade_item_id,gi.course_id,gi.grade_item_name,gi.created_by,crs.teacher_id,usr.user_name,
+crs.course_name,crs.course_description_En,crs.category_id,crs.start_date,crs.end_date,
+DATE_FORMAT(gi.date_of_grade_item, '%D %M %Y')ExamDate,gi.enrolment_start_date,
+DATE_FORMAT(gi.enrolment_close_date, '%D %M %Y')deadline
+,gi.active_status
+FROM grade_items gi
+LEFT JOIN courses crs ON gi.course_id = crs.course_id
+RIGHT JOIN USER usr ON usr.user_id = crs.teacher_id
+WHERE gi.active_status = 1 AND gi.grade_item_type = 'Exam'
+AND crs.course_name LIKE '%spe%'
+
+SELECT crs.course_name,crs.course_description_En,crs.course_id, usr.user_id,usr.user_name,crs.category_id,crs.start_date,crs.end_date
+FROM courses crs,USER usr, semester sm
+WHERE sm.semester_id =  crs.teacher_id = usr.user_id AND crs.status= 'active' AND
+(crs.course_name LIKE '%spe%'
+OR crs.course_id LIKE '%900%')
+ORDER BY crs.created_at DESC
+
+
+SELECT *
+FROM grade_items gi,course_enrolment ce, USER usr
+WHERE usr.user_id = gi.created_by AND gi.active_status = 1 AND gi.grade_item_type = 'Exam' AND gi.course_id = ce.course_id
+GROUP BY gi.grade_item_id
+
+
+
+SELECT gi.grade_item_id,gi.course_id,gi.grade_item_name,gi.created_by,usr.user_name,DATE_FORMAT(gi.date_of_grade_item, '%D %M %Y')ExamDate,gi.enrolment_start_date,gi.enrolment_close_date,gi.active_status
+FROM grade_items gi,course_enrolment ce, USER usr
+WHERE usr.user_id = gi.created_by AND gi.active_status = 1 AND gi.grade_item_type = 'Exam' AND gi.course_id = ce.course_id
+</search>
+
+
+<CreateCalenderEventUI>
+#Small Calender
+    #>>https://codepen.io/ykathryn/pen/xgxoPO?depth=everything&limit=all&order=popularity&page=3&q=jquery+calendar+&show_forks=false
+    >>https://codepen.io/Samchen1986/pen/NjbKWR?depth=everything&limit=all&order=popularity&page=3&q=jquery+calendar+&show_forks=false
+
+#Add calender event model aimation
+    >>https://codepen.io/allencwwong/pen/XNordY
+
+#notification lis
+    >>https://codepen.io/ksantangelo/pen/ObyOaP
+    >>https://codepen.io/christiannaths/pen/emdKGO?q=upcoming%20event%20&limit=all&order=popularity&depth=everything&show_forks=false
+    >>https://codepen.io/twansolo/pen/WOZVKY?depth=everything&limit=all&order=popularity&page=2&q=calendar+event+&show_forks=false
+</CreateCalenderEventUI>
+
+<CALENDER>
+>>https://fullcalendar.io/docs/
+>>https://www.sitepoint.com/comparison-javascript-calendars-schedulers/
+>>https://fullcalendar.io/docs/display/height/
+>>https://stackoverflow.com/questions/3408723/display-more-text-in-fullcalendar
+>>http://momentjs.com/
+>>https://github.com/telerik/kendo-ui-core/tree/master/examples
+<calender-ui>
+    >>https://codepen.io/subodhghulaxe/pen/EavbOz
+    >>https://codepen.io/tomasantunes/pen/bRvjNQ
+    >>https://codepen.io/Saminou24/pen/ktDbu
+        >>https://codepen.io/tomcwatts/pen/NGvEmR?q=planner&limit=all&order=popularity&depth=everything&show_forks=false
+</calender-ui>
+
+<fullcalender>
+    >>https://github.com/MikeSmithDev/FullCalModal/blob/master/index.html
+    >>http://www.mikesmithdev.com/blog/fullcalendar-event-details-with-bootstrap-modal/
+</fullcalender>
+</CALENDER>
+
+<concatnateTechnology>
+>>https://stackoverflow.com/questions/17685977/cut-java-string-at-a-number-of-character
+</concatnateTechnology>
+
+<HTML-editor>
+>> https://summernote.org/getting-started/#basic-api
+</HTML-editor>
+
+<posting
+</Ripper>
+
+<fullcalenderBaby>
+>>http://jsfiddle.net/XWNmd/1/
+>>http://jsfiddle.net/Mottie/G6K6Y/1739/
+</fullcalenderBaby>
+
+--------------------------------------
+
+EB101IWSWD-eyJsaWNlbnNlSWQiOiJFQjEwMUlXU1dEIiwibGljZW5zZWVOYW1lIjoibGFuIHl1IiwiYXNzaWduZWVOYW1lIjoiIiwiYXNzaWduZWVFbWFpbCI6IiIsImxpY2Vuc2VSZXN0cmljdGlvbiI6IkZvciBlZHVjYXRpb25hbCB1c2Ugb25seSIsImNoZWNrQ29uY3VycmVudFVzZSI6ZmFsc2UsInByb2R1Y3RzIjpbeyJjb2RlIjoiSUkiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJSUzAiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJXUyIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IlJEIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUkMiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJEQyIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IkRCIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUk0iLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJETSIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IkFDIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiRFBOIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUFMiLCJwYWlkVXBUbyI6IjIwMTgtMTAtMTQifSx7ImNvZGUiOiJDTCIsInBhaWRVcFRvIjoiMjAxOC0xMC0xNCJ9LHsiY29kZSI6IlBDIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In0seyJjb2RlIjoiUlNVIiwicGFpZFVwVG8iOiIyMDE4LTEwLTE0In1dLCJoYXNoIjoiNjk0NDAzMi8wIiwiZ3JhY2VQZXJpb2REYXlzIjowLCJhdXRvUHJvbG9uZ2F0ZWQiOmZhbHNlLCJpc0F1dG9Qcm9sb25nYXRlZCI6ZmFsc2V9-Gbb7jeR8JWOVxdUFaXfJzVU/O7c7xHQyaidCnhYLp7v32zdeXiHUU7vlrrm5y9ZX0lmQk3plCCsW+phrC9gGAPd6WDKhkal10qVNg0larCR2tQ3u8jfv1t2JAvWrMOJfFG9kKsJuw1P4TozZ/E7Qvj1cupf/rldhoOmaXMyABxNN1af1RV3bVhe4FFZe0p7xlIJF/ctZkFK62HYmh8V3AyhUNTzrvK2k+t/tlDJz2LnW7nYttBLHld8LabPlEEjpTHswhzlthzhVqALIgvF0uNbIJ5Uwpb7NqR4U/2ob0Z+FIcRpFUIAHEAw+RLGwkCge5DyZKfx+RoRJ/In4q/UpA==-MIIEPjCCAiagAwIBAgIBBTANBgkqhkiG9w0BAQsFADAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBMB4XDTE1MTEwMjA4MjE0OFoXDTE4MTEwMTA4MjE0OFowETEPMA0GA1UEAwwGcHJvZDN5MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxcQkq+zdxlR2mmRYBPzGbUNdMN6OaXiXzxIWtMEkrJMO/5oUfQJbLLuMSMK0QHFmaI37WShyxZcfRCidwXjot4zmNBKnlyHodDij/78TmVqFl8nOeD5+07B8VEaIu7c3E1N+e1doC6wht4I4+IEmtsPAdoaj5WCQVQbrI8KeT8M9VcBIWX7fD0fhexfg3ZRt0xqwMcXGNp3DdJHiO0rCdU+Itv7EmtnSVq9jBG1usMSFvMowR25mju2JcPFp1+I4ZI+FqgR8gyG8oiNDyNEoAbsR3lOpI7grUYSvkB/xVy/VoklPCK2h0f0GJxFjnye8NT1PAywoyl7RmiAVRE/EKwIDAQABo4GZMIGWMAkGA1UdEwQCMAAwHQYDVR0OBBYEFGEpG9oZGcfLMGNBkY7SgHiMGgTcMEgGA1UdIwRBMD+AFKOetkhnQhI2Qb1t4Lm0oFKLl/GzoRykGjAYMRYwFAYDVQQDDA1KZXRQcm9maWxlIENBggkA0myxg7KDeeEwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgWgMA0GCSqGSIb3DQEBCwUAA4ICAQC9WZuYgQedSuOc5TOUSrRigMw4/+wuC5EtZBfvdl4HT/8vzMW/oUlIP4YCvA0XKyBaCJ2iX+ZCDKoPfiYXiaSiH+HxAPV6J79vvouxKrWg2XV6ShFtPLP+0gPdGq3x9R3+kJbmAm8w+FOdlWqAfJrLvpzMGNeDU14YGXiZ9bVzmIQbwrBA+c/F4tlK/DV07dsNExihqFoibnqDiVNTGombaU2dDup2gwKdL81ua8EIcGNExHe82kjF4zwfadHk3bQVvbfdAwxcDy4xBjs3L4raPLU3yenSzr/OEur1+jfOxnQSmEcMXKXgrAQ9U55gwjcOFKrgOxEdek/Sk1VfOjvS+nuM4eyEruFMfaZHzoQiuw4IqgGc45ohFH0UUyjYcuFxxDSU9lMCv8qdHKm+wnPRb0l9l5vXsCBDuhAGYD6ss+Ga+aDY6f/qXZuUCEUOH3QUNbbCUlviSz6+GiRnt1kA9N2Qachl+2yBfaqUqr8h7Z2gsx5LcIf5kYNsqJ0GavXTVyWh7PYiKX4bs354ZQLUwwa/cG++2+wNWP+HtBhVxMRNTdVhSm38AknZlD+PTAsWGu9GyLmhti2EnVwGybSD2Dxmhxk3IPCkhKAK+pl0eWYGZWG3tJ9mZ7SowcXLWDFAk0lRJnKGFMTggrWjV8GYpw5bq23VmIqqDLgkNzuoog==
+
+
+-----------------------------------------

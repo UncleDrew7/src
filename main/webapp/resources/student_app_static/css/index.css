@@ -1,0 +1,884 @@
+/*=============================================
+=            main styles            =
+=============================================*/
+
+body{
+    overflow-x: hidden;
+     background:rgb(248,248,248);
+    /*width: 100%;*/
+    font-family: OpenSans,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+}
+
+/*=====  End of main styles  ======*/
+
+a{
+    
+}
+
+/*----------  First Block above Navigation  ----------*/
+.navbar{
+    background: rgba(35,107,166,1); /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(right,rgba(35,107,166,1),rgba(82,154,213,1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(right,rgba(35,107,166,1),rgba(82,154,213,1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(right,rgba(35,107,166,1),rgba(82,154,213,1)); /*Fx 3.6-15*/
+    background: linear-gradient(to right,rgba(35,107,166,1),rgba(82,154,213,1));/* Standard*/
+    border: 0px  #fff;
+    border-radius: 0px;
+    /*position: fixed;  Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    /*z-index: -1;*/
+}
+.titleBox {
+    height: 60px;
+    width: 100%;
+
+}
+
+.userName{
+    margin-right: 3px;
+}
+
+.profilBox{
+    float:right;
+    margin:15px;
+    /*margin-right:100px;*/
+}
+
+.dropdown-menu{
+    min-width: 120px;
+    margin-left: 37%;
+/*//65*/
+}
+
+.dropdown-toggle {
+   /*padding: 5px;*/
+   text-decoration: none;
+   background-color: #ffffff;
+   display: inline-block;
+   font-size: 14px;
+   /*margin-bottom: -1px;*/
+ }
+
+ .dropdown-menu {
+   /*margin: 0;*/
+   list-style: none;
+   white-space: nowrap;
+   background-color: #ffffff;
+ }
+
+ .profilBox .dropdown-toggle{
+     background: inherit;
+     border-width: 0px;
+ }
+
+ .dropDownbox:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* visited link */
+.dropDownbox:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* selected link */
+.dropDownbox:active {
+    color: #fff;
+    text-decoration: none;
+}
+.dropDownbox:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.topBarDivider{
+   /*font-size: */
+}
+.languageBox{
+    margin-right: 15px;
+    color: #fff;
+}
+ 
+
+
+/*=============================================
+=            second tab nav            =
+=============================================*/
+.navbar-fixed-top .nav{
+    background: #fff;
+    width: 100%;
+    /*position: absolute;*/
+}
+
+.navbar-fixed-top .nav-tabs > li, .nav-pills > li {
+    float:none;
+    display:inline-block;
+    *display:inline; /* ie7 fix */
+     zoom:1; /* hasLayout ie7 trigger */
+}
+
+.navbar-fixed-top .nav-tabs, .nav-pills {
+    text-align:center;
+}
+
+.navbar-fixed-top .nav-tabs {
+  border-bottom: 2px solid #DDD;
+}
+
+.navbar-fixed-top .nav-tabs > li.active > a,
+.navbar-fixed-top .nav-tabs > li.active > a:focus,
+.navbar-fixed-top .nav-tabs > li.active > a:hover {
+  border-width: 0;
+}
+
+.navbar-fixed-top .nav-tabs > li > a {
+  border: none;
+  color: #666;
+}
+
+.navbar-fixed-top .nav-tabs > li.active > a, .nav-tabs > li > a:hover {
+  /*border: none; commented out to make room for manage coures tab */
+  color: #4285F4 !important;
+  background: transparent;
+}
+
+.navbar-fixed-top .nav-tabs > li > a::after {
+  content: "";
+  background: #4285F4;
+  height: 2px;
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  bottom: -1px;
+  transition: all 250ms ease 0s;
+  transform: scale(0);
+}
+
+.navbar-fixed-top .nav-tabs > li.active > a::after, .nav-tabs > li:hover > a::after {
+  transform: scale(1);
+}
+
+.navbar-fixed-top .tab-nav > li > a::after {
+  background: #21527d none repeat scroll 0% 0%;
+  color: #fff;
+}
+
+.navbar-fixed-top .tab-pane {
+  padding: 15px 0;
+}
+
+.navbar-fixed-top .tab-content {
+  padding: 20px;
+}
+
+
+/*=====  End of second tab nav  ======*/
+
+
+/*=============================================
+=           Main body            =
+=============================================*/
+.content{
+    /*Add a top margin to avoid content overlay */
+    margin-top: 100px;
+}
+
+/*=============================================
+=            Card Containers             =
+=============================================*/
+
+.mainContainer{
+    /*background: green;*/
+    padding-left: 7%;
+    padding-right: 7%;
+    /*position: absolute;*/
+    /*z-index: 0;*/
+}
+
+.card{
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.075), 0 2px 4px rgba(0, 0, 0, 0.0375);
+}
+
+.bigCardContainer{
+    /*background: pink;*/
+    min-height: 400px;
+    padding-bottom: 30px;
+
+}
+
+
+.smallCardContainer{
+    /*background: blue;*/
+    min-height: 200px;
+    margin-bottom: 20px;
+}
+
+
+
+/*=====  End of Card Containers   ======*/
+
+
+
+/*=============================================
+=            globle Apps Shared Styles             =
+=============================================*/
+
+/* style for the subboxes Titles  */
+.titleTextBoxHeaders{
+    padding: 10px;
+    border: thin solid rgb(221,221,221);
+    border-width:0px 0px 1px 0px; 
+}
+
+
+/* Header titles for within cards  */
+
+.inPageHeaders{
+    padding: 10px;
+}
+
+
+/* side small card  */
+.courseCategoryList {
+    list-style-type: none;
+}
+
+
+.courseCategoryItem{
+    border: thin solid rgb(221,221,221);
+    border-width:0px 0px 1px 0px; 
+    max-width: 90%;
+    padding: 10px;
+}
+.courseOthersText{
+    color: grey;
+}
+
+/*CARD FOR ALL FORMS EG MANAGE UER MANAGE COURSE ETC*/
+.mainCardContainer{
+    /*background: blue;*/
+    margin-left: 7%;
+    margin-right:7%;
+    margin-bottom:2%;
+    min-height: 700px;
+}
+
+
+
+
+
+/*=============================================
+=           Animmated  Button for course      =
+=============================================*/
+
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.courseButton {
+
+  display: inline-block;
+  padding: 0.5em;
+  color: rgb(150,150,150);
+  border:  0.063em solid rgb(140,140,140);
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+    width: 102px;
+}
+
+.courseButton:hover,                    
+.courseButton:active {
+    background-color: rgb(140,140,140);
+    color: #fff;
+    text-decoration: none;
+}
+
+.courseButtonEnroll{
+    cursor: pointer;
+    display: inline-block;
+    padding: 0.5em;
+    color: #fff;
+    border:  0.063em solid rgb(140,140,140);
+    text-align: center;
+    outline: none;
+    text-decoration: none;
+    width: 102px;
+    background-color: rgb(140,140,140);
+}
+.courseButtonEnroll:hover,
+.courseButtonEnroll:active {
+    background-color: #fff;
+    color: rgb(150,150,150);
+    text-decoration: none;
+}
+
+
+
+
+/*----------  Genral Styles for google icons  ----------*/
+.mdi::before {
+    font-size: 24px;
+    line-height: 14px;
+}
+.btn .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.btn-xs .mdi::before {
+    font-size: 18px;
+    top: 3px;
+}
+.btn-sm .mdi::before {
+    font-size: 18px;
+    top: 3px;
+}
+.dropdown-menu .mdi {
+    width: 18px;
+}
+.dropdown-menu .mdi::before {
+    position: relative;
+    top: 4px;
+    left: -8px;
+}
+.nav .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.navbar .navbar-toggle .mdi::before {
+    position: relative;
+    top: 4px;
+    color: #FFF;
+}
+.breadcrumb .mdi::before {
+    position: relative;
+    top: 4px;
+}
+.breadcrumb a:hover {
+    text-decoration: none;
+}
+.breadcrumb a:hover span {
+    text-decoration: underline;
+}
+.alert .mdi::before {
+    position: relative;
+    top: 4px;
+    margin-right: 2px;
+}
+.input-group-addon .mdi::before {
+    position: relative;
+    top: 3px;
+}
+.navbar-brand .mdi::before {
+    position: relative;
+    top: 2px;
+    margin-right: 2px;
+}
+.list-group-item .mdi::before {
+    position: relative;
+    top: 3px;
+    left: -3px
+}
+
+/*TOP STATS CONTAINER AND NUMBERS */
+/**NUMBERS*!*/
+.dash-item__content {
+    /*padding: 1.8rem 0 0.375rem;*/
+    position: relative;
+    /*transition: all .2s $fastInEaseOut;*/
+}
+
+.quiz-results {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.quiz-results__item {
+
+    margin: 0 2% 0 0;
+    padding: 0;
+    color: #454545;
+
+}
+
+.quiz-results__number {
+    font-size: 30px;
+    line-height: 1;
+    position: relative;
+}
+
+.quiz-results__label {
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #888;
+}
+
+/*BREAD CRUBS */
+/*------------*/
+/*beardcrumbs 2*/
+.wrapper {
+    /*margin: 50px;*/
+    margin-left:5%;
+    margin-bottom: 10px;
+    /*margin-bottom: 25px;*/
+    /*background: pink;*/
+
+}
+
+ul.breadcrumbs {
+    /*margin: 25px 0px 0px;*/
+    padding: 0px;
+    font-size: 0px;
+    line-height: 0px;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    height: 40px;
+    margin-top: 20px;
+    /*margin-bottom: 5px;*/
+
+}
+ul.breadcrumbs li {
+    position: relative;
+    margin: 0px 0px;
+    padding: 0px;
+    list-style: none;
+    list-style-image: none;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    vertical-align: top;
+    border-left: 1px solid #ccc;
+    transition: 0.3s ease;
+}
+ul.breadcrumbs li:hover:before {
+    border-left: 10px solid #2F77B2;
+}
+
+/*old*/
+/*ul.breadcrumbs li:hover  a {*/
+    /*color: #000;*/
+    /*background: #2F77B2;*/
+/*}*/
+
+.first:hover  a {
+    color: #000;
+    background: #2F77B2;
+}
+
+ul.breadcrumbs li:hover .mainLk a {
+    color: #000;
+    background: #2F77B2;
+}
+
+
+
+ul.breadcrumbs li:before {
+    content: "";
+    position: absolute;
+    right: -9px;
+    top: -1px;
+    z-index: 20;
+    border-left: 10px solid #fff;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    transition: 0.3s ease;
+}
+ul.breadcrumbs li:after {
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: -1px;
+    z-index: 10;
+    border-left: 10px solid #ccc;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+}
+ul.breadcrumbs li.active a {
+    color: #000;
+    background:#2F77B2;
+}
+ul.breadcrumbs li.first {
+    border-left: none;
+}
+ul.breadcrumbs li.first a {
+    font-size: 15px;
+    padding-left: 20px;
+    border-radius: 5px 0px 0px 5px;
+}
+ul.breadcrumbs li.last:before {
+    display: none;
+}
+ul.breadcrumbs li.last:after {
+    display: none;
+}
+ul.breadcrumbs li.last a {
+    padding-right: 20px;
+    border-radius: 0px 40px 40px 0px;
+}
+ul.breadcrumbs li a {
+    display: block;
+    font-size: 12px;
+    line-height: 40px;
+    color: #757575;
+    padding: 0px 15px 0px 25px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+
+/*BREADCRUMBS*/
+
+/*ICONS*/
+.inIcon{
+    /*color: rgb(140,140,140);*/
+    color: rgb(69,69,69);
+}
+/*ICONS*/
+
+/*Headers*/
+.pageTitle{
+    margin : 0px 10px 20px 20px;
+    font-size: 22px;
+    color: #565656;
+}
+.courseTitle{
+    /*text-align: center;*/
+    /*margin-top: -5px;*/
+    /*padding-bottom: 20px;*/
+    font-weight: 400;
+}
+
+/*all buttons hover */
+.btn-default:hover{
+    background:  rgb(150,150,150);
+    color: #fff;
+}
+
+/*COLORS*/
+.appColor{
+    background: #2F77B2;
+    color: #2F77B2;
+}
+/*===== Shared Styles  Confirm dialog  ======*/
+
+/*===== Shared Styles   EVENTS UI  ======*/
+.widget a {
+    text-decoration: none;
+    color: inherit;
+}
+.eventList{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.notificationObject{
+    /*max-width: 100%;*/
+    /*background: coral;*/
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    /*margin-bottom:15px ;*/
+    height: 55px;
+    overflow: hidden;
+}
+
+.ntObjectCase{
+    display: flex;
+    /*justify-content: space-between;*/
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.eventText{
+    color: rgb(51, 51, 51);
+    font-weight: 500;
+    font-size: 17px;
+    text-align: center;
+}
+
+.textCase p{
+    text-align: center;
+
+}
+
+.dateCase {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+
+    /*border: 3px solid #73AD21;*/
+}
+.textCase {
+    display: inline-block;
+    width: 80%;
+    height: 50px;
+    /*background: red;*/
+    overflow: hidden;
+    /*border: 3px solid red;*/
+}
+
+.dayNumber{
+    line-height: .6em;
+    font-size: 18px;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.monthSm{
+    font-size: 16px;
+    opacity: 0.6;
+    color:  #888;
+    border-bottom: 3px solid rgb(66,133,244);
+}
+.title{
+    text-align: center;
+    margin-top: -5px;
+    padding-bottom: 20px;
+    font-weight: 300;
+}
+.b{
+    float: right;
+    width: 80%;
+    background: greenyellow;
+}
+.viewMore{
+    cursor: pointer;
+    color:rgb(66,133,244);
+}
+.viewMore:hover{
+    color:rgb(0,100,234) ;
+    text-decoration: underline;
+}
+.notificationObject #noTitle{
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: underline;
+}
+.notifcationContainer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/*/search box */
+.searchBoxSty{
+    padding-right: 18%;
+    margin-bottom: 15px;
+    /*padding-left: 15%;*/
+}
+
+/*===== Shared Styles  EVENTS UI  ======*/
+
+/*===== icon animate  ======*/
+
+ .inIconAni:hover{
+    cursor: pointer;
+    color: rgba(0,0,0,.3);
+    transition: .3s;
+    transform: scale(1.1);
+}
+ .iconhide{
+       visibility: hidden;
+   }
+
+
+/*===== icon animate  ======*/
+
+/*===== tool tips for login errors ======*/
+.toolTipBox {
+    position: relative;
+    display: none;
+    border-radius: 30%;
+    background-color: #deddff;
+    width: 100%;
+    text-align: center;
+
+}
+
+.toolTipBox .tooltipItem {
+    /*visibility: hidden;*/
+    color: #fff;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 5px 0;
+
+}
+
+
+
+/*===== tool tips for login errors ======*/
+
+
+/*===== major select ======*/
+.majorFilter{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    /*background: red;*/
+    /*width: 100%;*/
+}
+.majorFilter a{
+    text-decoration: none;
+}
+.selectMajor{
+    width: 400px;
+}
+.majorLable{
+     padding: 2px;
+     color: inherit;
+     font-weight: 700;
+ }
+.majorLable:hover{
+    background: #f5f5f5;
+    padding: 2px;
+    color: rgb(66, 133, 244);
+    cursor: pointer;
+}
+
+.classFilter{
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    /*background: red;*/
+    /*width: 100%;*/
+}
+.classFilter a{
+    text-decoration: none;
+}
+.selectClass{
+    width: 400px;
+}
+.classLable{
+    padding: 2px;
+    color: inherit;
+    font-weight: 700;
+}
+.classLable:hover{
+    background: #f5f5f5;
+    padding: 2px;
+    color: rgb(66, 133, 244);
+    cursor: pointer;
+}
+
+.semesterHeader{
+    margin-bottom: 0px;
+    background: rgb(51, 122, 183);
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.sideBoxHeader{
+    background: rgb(51, 122, 183);
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.filterBoxCourse{
+    max-height: 350px;
+    background: red;
+    overflow: hidden;
+    overflow-y: auto;
+    /*padding-top: 10px;*/
+    border: 1px solid #ddd;
+    border-top: 0px;
+    /*border-bottom: 0;*/
+    border-radius: 0;
+}
+.filterBoxCourse .list-group-item{
+    padding: 5px;
+    border-radius: 0;
+    text-align: center;
+}
+.filterBoxCourse .list-group{
+    margin: 0;
+}
+/*===== major select ======*/
+
+/*filter select background*/
+.activeFilter{
+    background: rgb(240, 240, 240);
+}
+
+
+/*===== Nav Dropdowns ======*/
+/* Style The Dropdown Button */
+
+/* The container <div> - needed to position the dropdown content */
+.breadcrumbs .dropdown {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+
+}
+
+/* Dropdown Content (Hidden by Default) */
+.breadcrumbs .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+}
+
+/* Links inside the dropdown */
+.breadcrumbs .dropdown-content a {
+    color: black;
+    text-decoration: none;
+    display: block;
+    background: #fff;
+
+}
+
+/* Change color of dropdown links on hover */
+.breadcrumbs .dropdown-content a:hover {
+    background-color:#2F77B2;
+            /*#f1f1f1*/
+}
+
+/* Show the dropdown menu on hover */
+.breadcrumbs .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.breadcrumbs .dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.wrapper
+
+
+/*===== Nav Dropdowns ======*/
+
+
+
+/*=====  End of globle Apps Shared Styles   ======*/
+
+
+
+
+
+
+

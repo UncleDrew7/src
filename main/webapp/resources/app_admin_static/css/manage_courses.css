@@ -1,0 +1,114 @@
+/*h1{*/
+    /*color: red;*/
+/*}*/
+
+/*COURSE STATISTICS BOX CONTAINER */
+.courseStatsBoxContainer{
+    max-width: 860px;
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+    /*background: pink;*/
+    /*overflow hidden */
+}
+
+/*OVERIDING GHOST BUTTON STYLES*/
+.searchingBox .courseButton {
+    width: 130px;
+    margin-bottom: 10px;
+}
+
+/*OVERIDING SEARCHING BOX*/
+.searchingBox{
+    height: 70px;
+    /*background: red;*/
+}
+
+
+.actionDropdown{
+    /*background: red;*/
+    /*margin-right: 1px;*/
+}
+
+.filterBoxCourse{
+    max-height: 350px;
+    /*background: red;*/
+    overflow: hidden;
+    overflow-y: auto;
+    padding-top: 10px;
+    border: 1px solid #ddd;
+    border-top: 0px;
+    border-radius: 0;
+}
+/*in index.css*/
+/*.semesterHeader{*/
+    /*margin-bottom: 0px;*/
+    /*background: rgb(51, 122, 183);*/
+    /*font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;*/
+    /*font-size: 14px;*/
+    /*font-weight: 700;*/
+/*}*/
+.filterBoxCourse .list-group-item{
+    padding: 3px;
+    border-radius: 0;
+    text-align: center;
+
+}
+
+
+/*major*/
+.majorParentCrsBox{
+    overflow-y: auto;
+    /*background: lightskyblue;*/
+    border: 1px solid #ddd;
+    height: 510px;
+    width: 100%;
+    margin-bottom: 25px;
+    /*margin-top: 11px;*/
+}
+.majorParentCrsBoxHeaderBox{
+    height: 50px;
+    width: 100%;
+    background: #5098d3;
+    padding: 12px;
+    margin-top: 11px;
+}
+.majorParentCrsBoxHeaderBox h4{
+    margin: 0;
+    text-align: center;
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+.flex-container {
+    display: flex;
+}
+
+#confirmationTableModel .holdBox{
+
+    max-height: 70%;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+#majorTable td {
+    cursor: pointer;
+}
+
+/*#confirmationTableModel .thead, tbody { display: block; }*/
+
+
+/*#confirmationTableModel tbody {*/
+    /*height: 100px; !* Just for the demo          *!*/
+    /*width: 100%;*/
+    /*overflow-y: auto;    !* Trigger vertical scroll    *!*/
+
+/*}*/
+/*#confirmationTableModel table {*/
+    /*width: 100%; !* 140px * 5 column + 16px scrollbar width *!*/
+    /*border-spacing: 0;*/
+/*}*/
+
+/*tbody td, thead th {*/
+    /*width: auto;  !* Optional *!*/
+/*}*/

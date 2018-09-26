@@ -1,0 +1,89 @@
+.dropBtn{
+    background:#DDDDDD;
+}
+
+thead{
+    background: #f8f8f8;
+}
+
+#gradeItemTable{
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.saveBtn{
+    width: 130px;
+
+}
+
+.divider{
+    height:1px;
+    margin-bottom: 15px;
+    border-bottom: thin solid #DDDDDD;
+    border-bottom-width:1px ;
+}
+
+.table-responsive{
+    min-height: 280px;
+    /*background: red;*/
+    border-bottom: thin solid #DDDDDD;
+}
+
+.avilableExamsContainer{
+    /*background: red;*/
+    min-height: 200px;
+}
+
+.avilableExamsTitle{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.avilableExamsContainer ul{
+    /*background: red;*/
+    max-width: 800px;
+}
+.avilableExamsContainer a{
+    width: 100px;
+    margin-top: 3px;
+    padding-top: 3px;
+    height: 30px;
+}
+
+
+/*COURSE STUDENT GRADE OVERVIEW*/
+.csgoContaier table{
+    /*overflow-x:scroll;*/
+    /*background: lightskyblue;*/
+    width: 100%;
+    /*width: 10%;*/
+    /*display:block;*/
+}
+/*div.dataTables_wrapper {*/
+    /*width: 900px;*/
+    /*margin: 0 auto;*/
+/*}*/
+
+.usrText{
+    cursor: pointer;
+}
+.usrText:hover{
+    color: #1C71A4;
+}
+
+
+/*student grade overview report*/
+.headBoxT{
+    font-family: OpenSans, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    vertical-align: bottom;
+    letter-spacing: normal;
+    word-spacing: 0px;
+    font-weight: 700;
+    color: #333333;
+    border: thin solid #DDDDDD;
+}
+#gradeReport .card {
+    margin-top: 40px;
+}

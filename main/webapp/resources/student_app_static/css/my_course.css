@@ -1,0 +1,125 @@
+
+/* Initial page settings  */
+
+body{
+    /*background: red;*/
+    background:rgb(248,248,248);
+}
+
+
+/* course cared list style  */
+
+.courseList{
+    /*list-style-type:none*/
+}
+
+.courseCard{
+    
+    border: 2px  red;
+
+}
+
+.listCard{
+    margin-bottom: 10px;
+}
+
+
+/*----------  course button   ----------*/
+
+.enrollmentBox{
+    /*background: rebeccapurple;*/
+    /*width: 103px;*/
+}
+
+.aText{
+    text-align: center;
+    text-decoration: underline;
+    margin-left: 24px;
+    cursor: pointer;
+}
+
+.unEnrollText{
+    text-decoration: underline;
+    text-align: center;
+    /*because text nolonger centered when translated to chinese*/
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    color: grey;
+    
+}
+
+
+
+.unEnrollTextBox{
+    padding: 12px;
+    margin-left: 10px;
+}
+
+
+.courseCardBox3{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.courseTextStyle{
+    padding-bottom: 5px;
+}
+
+.examBox .courseTextStyle {
+    /*background: red;*/
+    width: 300px;
+}
+
+.courseNameTextBox{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+/* override Card container and card style */
+
+.sideCard {
+    /* Add shadows to create the "card" effect */
+   border: thin solid grey;
+    border-width: 1px ;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /*max-width: 100px;*/
+}
+
+.boxSpace{
+    margin-bottom:10px;
+}
+
+.headers{
+    padding: 10px;
+    border: thin solid rgb(221,221,221);
+    border-width:0px 0px 1px 0px; 
+}
+
+
+
+.courseFilterList{
+    list-style-type: none;
+}
+
+.courseFilterList li {
+    padding: 3.5px;
+    color: grey;
+}
+
+.noData{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    color: #8C8C8C;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.searchBox{
+    padding-right: 18%;
+    margin-bottom: 15px;
+    /*padding-left: 15%;*/
+}
+

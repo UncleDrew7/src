@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/WEB-INF/layouts">
+
+    <excludes>
+        <!--<pattern>/nodecorate</pattern>-->
+        <!--<pattern>/student/home</pattern>-->
+        <pattern>/resources/*</pattern>
+        <pattern>/welcome</pattern>
+        <pattern>/welcome?language=zh_CN</pattern>
+        <pattern>/welcome?language=en</pattern>
+    </excludes>
+
+
+    <!--<decorator name="default" page="default.jsp">-->
+        <!--&lt;!&ndash;<pattern>*</pattern>&ndash;&gt;-->
+        <!--<pattern>/nodecorate</pattern>-->
+    <!--</decorator>-->
+
+    <decorator name="main" page="main.jsp">
+        <pattern>/student/*</pattern>
+    </decorator>
+
+    <decorator name="adminMain" page="adminLayoutMain.jsp">
+        <pattern>/admin/*</pattern>
+    </decorator>
+
+    <decorator name="teacherMain" page="teacherLayoutMain.jsp">
+        <pattern>/teacher/*</pattern>
+    </decorator>
+
+</decorators>

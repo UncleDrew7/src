@@ -1,0 +1,37 @@
+/*SECTION SETTINGS BOX */
+.sectionSettingsBox{
+    /*background: yellow;*/
+    float: right;
+    max-width: 250px;
+    margin-top: -14px;
+    padding: 1em;
+}
+.sectionSettingsBox a {
+    color: #1C71A4;
+    font-weight: 300;
+}
+
+/*SECTION ADD BOX*/
+.sectionAddBox{
+    border-style: dotted;
+    height: 150px;
+    width: 150px;
+    margin: 0 auto;
+    text-align: center;
+    border-color: rgb(160,160,160);
+}
+.sectionAddBox span{
+    line-height: 100px;
+}
+.sectionAddBox .glyphicon-plus{
+    font-size: 50px;
+    text-align: center;
+}
+
+.sectionContainerHeaderBox h4{
+    text-align: center;
+}
+
+.formDivider{
+    margin-top: -15px;
+}

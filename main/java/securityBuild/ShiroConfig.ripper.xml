@@ -1,0 +1,42 @@
+<iniConfig>
+    [main]
+    # Configure a Realm to connect to a user datastore.
+    jdbcRealm=org.apache.shiro.realm.jdbc.JdbcRealm
+    #jdbcRealm.permissionsLookupEnabled=false
+    # If not filled, subclasses of JdbcRealm assume "select password from users where username = ?"
+    jdbcRealm.authenticationQuery = select password from user where user_id = ?
+    # If not filled, subclasses of JdbcRealm assume "select role_name from user_roles where username = ?"
+    jdbcRealm.userRolesQuery = select role from user_role where user_id = ?
+
+    ds = com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+    ds.serverName = localhost
+    ds.user = root
+    ds.password = lani
+    ds.databaseName = ucms
+    jdbcRealm.dataSource = $ds
+
+    #the following lines to enable password encryption.
+    sha256Matcher = org.apache.shiro.authc.credential.Sha256CredentialsMatcher
+    jdbcRealm.credentialsMatcher = $sha256Matcher
+
+
+    cacheManager = org.apache.shiro.cache.MemoryConstrainedCacheManager
+    securityManager.cacheManager = $cacheManager
+</iniConfig>
+
+<resourse>
+>>https://gist.github.com/dominicfarr/9637357
+
+<ini>
+    >>https://github.com/danielmt/shiro-primefaces-example/blob/master/src/main/webapp/WEB-INF/shiro.ini
+</ini>
+
+<notUsed>
+    >>
+    >>https://stackoverflow.com/questions/34496252/apache-shiro-authentication-issues
+    >>https://stackoverflow.com/questions/34410401/not-able-to-set-success-url-in-apache-shiro?rq=1
+    >>https://stackoverflow.com/questions/17441019/how-to-configure-jdbcrealm-to-obtain-its-datasource-from-jndi
+    >>https://gist.github.com/adamjshook/6c42b03fdb09b60cd519174d0aec1af5
+    >>https://stackoverflow.com/questions/25071670/configure-apache-shiro-for-mysql-with-sha256-passwords?rq=1
+</notUsed>
+</resourse>

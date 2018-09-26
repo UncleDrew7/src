@@ -1,0 +1,483 @@
+label.firstName=First Name //名字
+label.lastName=Last Name //姓氏
+label.submit=Login  // 登录
+
+#application main Lable <done>
+application.myProfile = My Profile //个人信息
+application.logOut = Log Out //退出
+
+
+
+#student App    <done>
+studentLable.home = Home //？？
+studentLable.myCourses = My Courses //我的课程
+studentLable.grades = Grades //成绩
+studentLable.activity = Activity //活动
+
+#Admin App Nav lables
+adminNavLable.dashboard = Dashboard //控制台
+adminNavLable.manageUsers = Manage Users //用户管理
+adminNavLable.manageCourses = Manage Courses //课程管理
+adminNavLable.grades = Grades //成绩
+adminNavLable.reports= Reports //成绩单
+adminNavLable.publish = Publish //发布
+adminNavLable.backup = Back Up //备份
+
+#Teacher App Nav lables
+teacherNavLable.manageStudents = Manage Students //学生管理
+teacherNavLable.activity  = Activity //活动
+
+
+#-------student page titles <doen>
+studentPageTitle.home = Search For Courses //课程搜索
+studentPageTitle.myCourses = My Courses //我的课程
+studentPageTitle.grades = Grades Overview  //成绩
+studentPageTitle.activity = Activities //活动
+
+
+
+#home page lables   <done>
+homePageLable.search = Search //搜索
+
+
+
+#course page    <done>
+studentPageCourseLables.category = Category	//分类
+studentPageCourseLables.teacher = Teacher	//教师
+studentPageCourseLables.timePeriodFrom = From	//开始时间
+studentPageCourseLables.timePeriodTo = To	//结束时间
+studentPageCourseLables.goToCourseBtn = Go to Course	//进入课程
+studentPageCourseLables.unEnroll = Un-enroll	//注销课程
+studentPageCourseLables.enroll = Enroll Now	//注册课程
+
+#new
+studentPageCourseLables.courseName = Course Name 	//课程名称
+studentPageCourseLables.grade  = Grade			//成绩
+
+
+
+#filter course lables   <done>
+studentPageCourseLables.currentCourses = Current Courses	//当前课程
+studentPageCourseLables.completedCourses = Completed Courses	//已完成课程
+studentPageCourseLables.unEnrolledCourses = Un-Enrolled Courses	//未注册课程
+studentPageCourseLables.allCourses = All Courses		//全部课程
+
+
+
+#shared page lables <done>
+sharedPageLable.upcomingEvent = Upcoming Events		//临近事件
+sharedPageLable.couresCategory = Course Cartegory 	//课程分类
+sharedPageLable.filterCoures = Filter Course		//过滤课程
+
+
+
+#common lables  <done>
+commonLable.showMore = Show More //展开
+
+
+#STUDENT HOME
+studentHome.course = Course	//课程
+studentHome.exam = Exam		//考试
+studentHome.enrolProgress = Enrolment Progress	//注册进度
+studentHome.examCode = Exam Code		//考试代码
+studentHome.examDate = Exam Date		//考试日期
+studentHome.examDeadline = Exam Code		//考试代码？？？
+
+#USER PROFILE
+user.Name = Name		//姓名
+user.Class = Class		//班级
+user.Intake = Intake		//年级
+user.Gender = Gender		//性别
+user.Country = Country		//国籍
+user.About = About		//关于
+user.Edit = Edit profile	//编辑
+user.DegreeType = DegreeType	//学位类型
+user.gradeOverView = Grades overview for //成绩一览
+
+
+#STUDENT ENROLMENTS
+student.examCourseE = Exam & Course Enrolments	//考试与课程注册
+system.pending = pending 		//进行中
+system.enrolled = enrolled 		//已注册
+system.showAllE = Show all enrollments 	//显示所有
+system.currentCourses = Current Courses //当前课程
+system.allCourses = All Courses 	//所有课程
+system.allExam = All Exams		//所有考试
+
+#STUDENT GRADE REPORT
+student.gradeReportT1 = Grade Report	//成绩单
+gradeReport.gradeReportT2 = My Grades 	//我的成绩
+gradeReport.report = Report 		//成绩汇总
+gradeReport.OverviewStmt = Overview report for	//汇总
+gradeReport.gradeItem = Grade Item	//成绩项目
+gradeReport.grade = Grade	//成绩
+gradeReport.range = Range 	//范围
+gradeReport.percentage = Percentage	//百分比
+gradeReport.letter = Letter		//等级
+gradeReport.total = Course total 	//总分
+
+
+#ADMIN CENTER
+
+#DASHBORD
+admin.totalUsers = Total Users		//全部用户
+admin.totalStudents = Total Students	//全部学生
+admin.totalGenralDegStd = Total General-Degree Students	//单学位学生
+admin.totalDoubleDegStd = Total Double-Degree Students	//双学位学生
+admin.totalActiveCourses = Total Active Courses		//全部开设课程
+admin.totalDoublDegCur = Double-Degree Courses		//双学位课程
+admin.genralCourses = General Courses			//校内课程
+admin.totalExamEnrollments = Total Exam Enrollments 	//已注册考试
+admin.totalCourseUnEnrollments = Total Course Un-Enrollments //未注册课程
+
+admin.systemReqNoti = Request Notifications	//请求消息
+admin.systemReqFooter = Courses and Exam enrolment request notifications	//课程与考试注册请求
+admin.item = Item	//项目
+admin.itemId = Item ID	//项目代码
+admin.itemName = Item Name	//项目名称
+admin.totalEnrollments = Total Enrollments	//注册汇总
+admin.enrollmentRequests = Enrollment Requests	//注册请求
+admin.action = Action	//动作
+admin.enroll = Enroll	//注册
+admin.gotoCourse = Go to course course	//进入课程
+
+#ENROLLMENT LIST
+enrollmentList.title = Course Enrollment List 	//课程注册列表
+enrollmentList.courseId = Course ID		//课程代码
+enrollmentList.courseName = Course Name		//课程名称
+enrollmentList.teacher = Teacher		//教师
+enrollmentList.courseType = Course Type		//课程类型
+enrollmentList.enrolmentDeadline = Enrolment DeadLine	//注册截止时间
+enrollmentList.enrolledStudents = Enrolled Students	//已注册学生
+enrollmentList.enrolmentRequests = Enrolment Requests	//注册请求
+
+enrollmentList.enrollStudent = Enroll Student	//注册学生
+enrollmentList.exportList = Export List		//导出清单
+enrollmentList.enrolmentList = Enrolment List	//注册列表
+
+enrollmentList.studentName = Student Name	//学生姓名
+enrollmentList.studentId = Student ID		//学生学号
+enrollmentList.degreeType = Degree Type		//学位类型
+enrollmentList.class = Class 			//班级
+enrollmentList.action = Action			//动作
+enrollmentList.enrolmentDate = Enrolment Date	//注册日期
+enrollmentList.submissionDate = Submission Date	//提交日期
+
+
+
+#ENROLL STUDENT
+enrollStudent.title = Enroll Student 	//注册学生
+enrollStudent.title2 = Course Enrollment //课程注册
+enrollStudent.courseCode = Course Code 		//课程代码
+enrollStudent.unEnrolledStudentList = Un-Enrolled Student List 	//未注册学生列表
+enrollStudent.totalEnrolledStd = Total enrolled students 	//已注册学生汇总
+enrollStudent.filters = Filters 				//过滤
+enrollStudent.sort1 = Sort by name 				//姓名排序
+enrollStudent.enrolledStudents = Enrolled Students		//已注册学生
+enrollStudent.enrolled = Enrolled 				//已注册
+
+#ADD EVENT
+event.title1 = Add event 	//添加事件
+event.title2 = Create new event | notification 	//新增事件|通知
+event.title3 = Edit event | notification	//编辑事件|通知
+event.eventTitle = Event title			//事件标题
+event.eventTitlePlaceHolder = Enter event | notification	//进入事件|通知
+event.eventType = Type of event			//事件类型
+event.eventTypePlaceHolder = Select notification type //选择通知类型
+event.date = Date 	//日期
+event.eventDatePlaceHolder = Enter event date	//进入事件日期
+event.description = Description			//描述
+event.eventDescriptionPlaceHolder = add event description 	//添加事件描述
+event.createEvent = Create Event	//添加事件
+event.upcomingEvents = Upcoming events	//临近事件
+event.LastAddedEvents = Last added events	//最近新增事件
+
+
+#MANAGE USERS
+manageUsers.title1 = Manage Users	//管理用户
+manageUsers.totalUsers = Total Users	//用户汇总
+manageUsers.students = Students		//学生汇总
+manageUsers.teachers = Teachers		//教师汇总
+manageUsers.classes = Classes		//班级汇总
+manageUsers.show = Show			//显示
+manageUsers.entries = entries		//项目
+manageUsers.search = Search		//搜索
+manageUsers.name = Name			//姓名
+manageUsers.idNumber = ID Number	//学号
+manageUsers.role = Role 		//角色
+manageUsers.gender = Gender		//性别
+manageUsers.class = Class		//班级
+manageUsers.country = Country		//国籍
+manageUsers.lastAccessed = Last Accessed //最近访问
+manageUsers.action = Action		//动作
+
+manageUsers.manageClasses = Manage Classes	//管理班级
+manageUsers.className = Class Name		//班级名称
+manageUsers.classId = Class Id No		//班级代码
+manageUsers.intake = Intake			//年级
+manageUsers.numbrOfStd = No of Students 	//学生数
+manageUsers.status = Status			//状态
+
+manageUsers.addUserOrClass = Add User | Class	//添加用户|班级
+manageUsers.addNewStudent  = Add New Student 	//新增学生
+manageUsers.importStudentExcel = Import Student Excel	//导入学生
+manageUsers.downloadStudentExcel = Download student list excel template //下载学生导入Excel模板
+manageUsers.addNewTeacher  = Add New Teacher 	//新增教师
+manageUsers.importTeacherExcel = Import Teacher Excel	//导入教师
+manageUsers.downloadTeacherExcel = Download teacher list excel template //下载教师导入Excel模板
+manageUsers.addClassTeacher  = Add New Class 	//新增班级
+manageUsers.importClassExcel = Import Class Excel	//导入班级
+manageUsers.downloadClassExcel = Download class list excel template 	//下载班级导入Excel模板
+
+#vADMIN STUDENT FORM
+studentForm.title1 = Create New User 			//创建新用户
+studentForm.basic = Basic 				//基础资料
+studentForm.userId = User Id				//用户ID
+studentForm.userIdPlaceHolder = Enter User id 		//输入用户ID
+studentForm.role = Role 				//角色
+studentForm.rolePlaceHolder = Select role  		//选择角色
+studentForm.class = Class 				//班级
+studentForm.classPlaceHolder = Enter User class 	//输入用户班级
+studentForm.intake = Intake 				//年级
+studentForm.intakePlaceHolder = Select intake 		//选择年级
+studentForm.userInformation = User Information 		//用户信息
+studentForm.firstName = First Name 			//名字
+studentForm.firstNamePlaceHolder =  Enter First Name 	//输入名字
+studentForm.lastName = Last Name 			//姓氏
+studentForm.lastNamePlaceHolder = Enter Last Name 	//输入姓氏
+studentForm.gender = Gender				//性别
+studentForm.genderPlaceHolder = Select gender 		//选择性别
+studentForm.dateOfBirth = Date of Birth 		//生日
+studentForm.dateOfBirthPlaceHolder = Enter date of birth //输入生日
+studentForm.email = Email				//Email
+studentForm.emailPlaceHolder = Enter email		//输入Email
+studentForm.city = City/Town				//城市
+studentForm.cityPlaceHolder = Enter City/Town		//输入城市
+studentForm.country = Country				//国家
+studentForm.countryPlaceHolder = Enter Country 		//输入国家
+studentForm.defaultPassword = Default Password 		//默认密码
+studentForm.selectDefaultPsw = Select Default Password	//选择默认密码
+studentForm.selectDefaultPswPlaceHolder = Enter user default password //输入用户默认密码
+
+studentForm.settings = Settings			//设置
+studentForm.degreeType = Degree Type		//学位类型
+studentForm.primaryLanguage = Primary Language	//首选语言
+studentForm.saveSettings = Save Settings	//保存设置
+studentForm.lastAddedUsers = Last added users	//最近添加用户
+
+
+#MANAGE COURSES
+
+manageCourse.totalCourses = Total Courses		//所有课程
+manageCourse.generalCourses = General Courses		//一般课程
+manageCourse.doubleDegreeCourses = Double-Degree Courses//双学位课程
+manageCourse.semester = Semesters			//学期
+manageCourse.manageCourses = Manage Courses		//课程管理
+manageCourse.courseName = Course Name 			//课程名称
+manageCourse.courseId = Course Id 			//课程代码
+manageCourse.teacher = Teacher 				//教师
+manageCourse.courseCategory = Course Category 		//课程类别
+manageCourse.startDate = Start Date 			//开始日期
+manageCourse.endDate = End Date 			//结束日期
+manageCourse.enrolledStudents = Enrolled Students 	//已注册学生
+
+
+#MANAGE SEMESTER
+manageSemesters.manageSemesters = Manage Semesters 	//学期管理
+manageSemesters.semesterId = Semester Id 		//学期代码
+manageSemesters.semesterCode =  Semester Code 		//学期编码		what's the difference between this Id and Code?
+manageSemesters.numberOfCourse = Number of Courses	//课程总数
+manageSemesters.startDate = Start Date 			//开始日期
+
+#ADD COURSE | SEMESTER
+addCourseOrSemester.addCourseOrSemester = Add Course | Semester 	//添加课程|学期
+addCourseOrSemester.addNewCourse = Add New Course 			//新增课程
+addCourseOrSemester.importCourseExcel = Import Course Excel 		//导入课程
+addCourseOrSemester.downloadCourseListExcelTemplate = Download course list excel template //下载课程导入Excel模板
+addCourseOrSemester.addNewSemester = Add New Semester 	//新增学期
+addCourseOrSemester.importSemesterExcel = Import Semester Excel //导入学期
+addCourseOrSemester.downloadSemesterListExcelTemplate = Download semester list excel template //下载学期导入Excel模板
+
+
+#ADD COURSE FORM
+courseForm.title1 = Add course //添加课程
+courseForm.createNewCourse = Create New Course 	//创建课程
+courseForm.basic =  Basic 	//基础资料
+courseForm.courseId = Course Id //课程代码
+courseForm.courseIdPlaceholder = Enter course id  //输入课程代码
+courseForm.courseName = Course Name 		//课程名称
+courseForm.coursePlaceholder = Enter course name //输入课程名称
+courseForm.courseShortName = Course short name 	//课程简称
+courseForm.courseShortNamePlaceholder = Enter course short name //输入课程简称
+courseForm.teacher = Teacher	//教师
+courseForm.teacherPlaceholder = Select teacher //选择教师
+courseForm.courseCategory = Course Category 	//课程分类
+courseForm.courseCategoryPlaceholder = Select Course Category //选择课程类别
+courseForm.courseDetails = Course Details 	//课程信息
+courseForm.courseDetailsPlaceholder = Enter course details	//输入课程信息
+courseForm.startDate = Start Date 	//开始日期
+courseForm.startDatePlaceholder = Enter course start date 	//输入课程开始日期
+courseForm.endDate= End Date 	//结束日期
+courseForm.endDatePlaceholder = Enter course end date 	//输入课程结束日期
+courseForm.description = Description	//描述
+courseForm.descriptionPlaceholder = Enter course description	//输入课程描述
+
+courseForm.degreeType = Degree Type 	//学位类型
+courseForm.degreeTypePlaceholder = Select degree type for course //选择学位类型
+courseForm.contentLanguage = Content Language	//语言
+courseForm.courseStatus = Course Status		//课程状态
+courseForm.lastAddedCourses = Last added courses 	//最近添加课程
+courseForm.lastEditedCourses = Last edited courses 	//最近编辑课程
+
+
+
+#ADD SEMESTER FORM
+semesterForm.createNewSemester = Create New Semester	//创建学期
+semesterForm.basic = basic 				//基础信息
+semesterForm.semesterCode = Semester Code 		//学期编码
+semesterForm.semesterCodePlaceHolder = YYYY Fall | Spring //学期
+semesterForm.startDate = Start Date 			//开始日期
+semesterForm.startDatePlaceholder = Enter semester start date //输入学期开始日期
+semesterForm.endDate = End Date		//结束日期
+semesterForm.endDatePlaceholder = Enter semester end date 	//输入学期结束日期
+semesterForm.createSemester = Create Semester	//创建学期
+semesterForm.lastAddedSemester = Last added semester 	//最近添加学期
+semesterForm.lastEditedSemester = Last Edited semester 	//最近编辑学期
+
+
+#COURSE PAGE
+coursePage.section = Section 		//
+coursePage.aboutCourse = About Course	//关于课程
+coursePage.readMore = read more		//更多信息
+coursePage.teacher = Teacher		//教师
+coursePage.contentLanguage = Content Language	//语言
+coursePage.from = From 			//开始于
+coursePage.to= To			//结束于
+coursePage.editCourse = Edit Course 	//编辑课程
+coursePage.courseSettings = Course Settings	//设置
+coursePage.gradeReport = Grade Report	//成绩报告
+coursePage.exams = Exams		//考试
+coursePage.enrolledStudents = Enrolled Students	//已注册学生
+coursePage.addContent = Add Content	//添加内容
+coursePage.edit = Edit 		//编辑
+coursePage.delete = Delete	//删除
+coursePage.addTopic = Add Topic //添加标题
+
+coursePage.createCourseEvent = Create Course Event //创建课程事件
+coursePage.createEvent = Create Event 	//创建事件
+coursePage.editCourseEvent = Edit Course Event //编辑课程事件
+coursePage.editEvent = Edit Event //编辑事件
+
+
+#ADD COURSE CONTENT
+addCourseContent.addCourseContent = Add Course Content //添加课程内容
+addCourseContent.topicName = Topic name //标题名称
+addCourseContent.topicNamePlaceholder = Enter topic name //输入标题
+addCourseContent.topicDescription = Topic description	//标题描述
+addCourseContent.topicDescriptionPlaceholder = Enter topic description //输入标题描述
+addCourseContent.uploadFile = Upload File //上传文件
+addCourseContent.uploadContent = Upload Content //上传内容
+addCourseContent.uploadedFiles = Uploaded Files	//多文件上传
+
+
+#MANGE COURSE EXAMS
+courseExams.courseExams = Course Exam	//考试
+courseExams.examDate = Exam Date	//考试日期
+courseExams.deadline = Enrollment Deadline	//注册截止时间
+courseExams.createdBy = Created By	//创建于
+courseExams.enrolledStudents = Enrolled Students	//已注册学生
+courseExams.active = active	//当前
+courseExams.enroll = Enroll	//注册
+courseExams.addGrades = Add Grades	//添加成绩
+courseExams.editExam = Edit Exam	//编辑考试
+courseExams.cancelExam = Cancel Exam	//取消考试
+
+#SEMESTER COURSE LIST
+semesterCourseList.semesterCourseList = Semester Course List	//学期课程列表
+semesterCourseList.semesterCode = Semester Code 	//学期编码
+semesterCourseList.numberOfCourses = Number of Courses 	//课程数目
+
+#MANAGE EXAMS
+manageExams.manageExams = Manage Exams	//考试管理
+manageExams.activeExams = Active Exams	//当前考试
+manageExams.enrolmentRequests = Enrolment Requests	//注册申请
+manageExams.examRequests = Exam Requests	//考试申请
+manageExams.examId = Exam id 	//考试代码
+manageExams.participants = Participants	//参与者
+manageExams.viewCourseExams = View course exams	//查看考试
+
+manageExams.addExam = Add exam	//添加考试
+manageExams.addNewExam = Add New Exam	//新增考试
+manageExams.importExamExcel = Import Exam Excel //导入考试
+manageExams.downloadExamExcelTemplate =  Download exam list excel template	//下载考试Excel模板
+
+manageExams.examEnrollment = Exam Student Enrollment //考试学生注册
+manageExams.examEnrollmentList = Exam Enrollment List	//考试注册清单
+
+
+
+#EXAM FORM
+examForm.addExam = Add Exam	//添加考试
+examForm.createNewExam = Create New Exam	//新增考试
+examForm.examCode = Exam Code	//考试代码
+examForm.examCodePlaceholder = Enter Exam Code //输入考试代码
+examForm.dateOfExam = Date Of Exam //考试日期
+examForm.dateOfExamPlaceholder = Enter Exam Start Date 	//输入考试日期
+examForm.enrolmentStartDate = Enrolment Start date	//注册开始日期
+examForm.enrolmentStartDatePlaceholder = Enter Exam Enrolment Start Date	//输入注册开始日期
+examForm.enrolmentEndDate = Enrolment End date	//注册结束日期
+examForm.enrolmentEndDatePlaceholder = Enter Exam Enrolment End Date 	//输入注册结束日期
+examForm.createExam = Create Exam	//新建考试
+examForm.lastAddedExams = Last added exams	//最近添加的考试
+examForm.lastEditedExams = Last edited exams 	//最近编辑的考试
+
+
+#REPORTS
+reports.reports = Reports	//报表
+reports.systemLogs = System Logs	//系统日志
+reports.location = Location	//地点
+reports.user = User	//用户
+reports.ipAddress = IP Address	//IP地址
+reports.time = Time	//时间
+reports.action = Action	//动作
+reports.information = Information	//信息
+
+#ACTIVITIES
+activities.addNotification = Add notification 	//添加通知
+activities.createNewsOrNotification = Create news | notification	//新建新闻|通知
+activities.editNewOrNotification = Edit news | notification	//编辑新闻|通知
+activities.title = Title	//标题
+activities.titlePlaceholder = Enter title 	//编辑标题
+activities.notification = Notification	//通知
+activities.notificationPlaceHolder = Enter notification description 	//输入通知描述
+
+
+
+extra.courseList = 课程列表
+extra.viewGrades = 查看成绩
+extra.manageGrades = 管理成绩
+extra.platform = 平台
+extra.activeCourses = 活动课程
+extra.totalExams = 所有的考试
+
+
+extra.studentList = 学生名单
+extra.addStudent = 添加学生
+extra.created = 创建日期
+
+extra.eventName = 事件名称
+extra.eventDate = 活动日期
+extra.eventDescription = 事件描述
+
+extra.courseShortName = 课程的短名称
+extra.saveChanges = 保存更改
+
+extra.notifications= 系统通知
+extra.logs = 系统日志
+
+
+
+
+
+
+

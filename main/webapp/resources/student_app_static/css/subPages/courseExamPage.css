@@ -1,0 +1,50 @@
+.courseList{
+    /*background: red;*/
+    width: 70%;
+    margin:0 auto
+}
+
+/*footer{*/
+    /*display: none;*/
+/*}*/
+
+.avilableExamsContainer{
+    /*background: red;*/
+    min-height: 200px;
+}
+
+.avilableExamsTitle{
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.avilableExamsContainer ul{
+    /*background: red;*/
+    max-width: 800px;
+}
+.avilableExamsContainer a{
+    width: 100px;
+    margin-top: 3px;
+    padding-top: 3px;
+    height: 30px;
+}
+
+.divider{
+    height:1px;
+    margin-top: 60px;
+    margin-bottom: 15px;
+    border-bottom: thin solid #DDDDDD;
+    border-bottom-width:1px ;
+}
+
+.tagContainer{
+    /*background: red;*/
+    height: 80px   ;
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.examContent{
+    padding-left: 20px;
+}

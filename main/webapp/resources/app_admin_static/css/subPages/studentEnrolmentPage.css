@@ -1,0 +1,216 @@
+body{
+    overflow-x: hidden;
+}
+.btnGroupBox{
+    margin-left: 7%;
+    margin-right: 7%;
+    /*margin-bottom: 50px;*/
+}
+.bigCardContainer{
+
+}
+.searchBox{
+    padding: 10px;
+}
+.listContainer{
+    max-height: 400px;
+    min-height: 400px;
+    overflow-y: auto;
+    /*margin-top: -10px;*/
+}
+.totalEnrolled{
+    float: right;
+    color: #8c8c8c;
+}
+
+.courseDes{
+    /*background: pink;*/
+    min-height: 100px;
+    margin-left: 7%;
+    margin-right: 7%;
+    margin-top: 10px;
+}
+
+.page{
+    margin: 0px auto;
+    /*width: 90%;*/
+    background-color: #fff;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 5px;
+
+
+}
+
+.page-header{
+    /*margin-bottom: 20px;*/
+    /*background: lightpink;*/
+    border: 2px solid  #eaeaea;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    /*padding: 2px;*/
+    margin: 2px;
+}
+.line{
+    border: 1px solid  #eaeaea;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+.eBtn{
+    width: 100px;
+}
+/*.page-header h2{*/
+    /*float: left;*/
+    /*font-size: 22px;*/
+    /*text-transform: uppercase;*/
+    /*font-weight: bold;*/
+    /*color: #555;*/
+/*}*/
+
+/*.page-header .student-search{*/
+    /*float: right;*/
+/*}*/
+
+/*.page-header .student-search input{*/
+    /*border-radius: 5px;*/
+    /*border: 1px solid #eaeaea;*/
+    /*!*padding: 8px 15px;*!*/
+    /*font-size: 14px;*/
+/*}*/
+
+/*.page-header .student-search button{*/
+    /*border-radius: 5px;*/
+    /*border: 1px solid #eaeaea;*/
+    /*!*padding: 8px 15px;*!*/
+    /*font-size: 14px;*/
+    /*background-color: #4ba6c3;*/
+    /*color: #fff*/
+/*}*/
+
+
+
+.student-item{
+    /*margin: 0 0 20px 0;*/
+    /*margin-top: 10px;*/
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.student-details{
+    width: 50%;
+    float: left;
+}
+
+.student-details .avatar{
+    width: 40px;
+    height: auto;
+    border-radius: 20px;
+    float: left;
+    margin-right: 14px
+
+}
+
+
+.student-details .courseAvatar{
+    width: 45px;
+    height: 45px;
+    /*border-radius: 20px;*/
+    float: left;
+    margin-right: 14px
+
+}
+
+
+.student-details h3{
+    margin: 4px 0 2px 0;
+    color: #4ba6c3;
+    font-size: 16px;
+}
+
+.student-details .email{
+    color: #888;
+    font-size: 14px;
+}
+
+
+.joined-details{
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.joined-details .date{
+    margin-top: 5px;
+    display: block;
+    font-size: 14px;
+    color: #999;
+}
+
+.student-item:last-child{
+    margin: 0;
+    padding: 0;
+    border-bottom: none;
+}
+
+.pagination{
+    margin: 40px 0 0 0;
+    text-align: center;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.cf:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.navlink {
+    float: left;
+}
+
+/*------------------------*/
+.courseButton{
+    font-size: 13px;
+    cursor: pointer;
+    width: 80px;
+    height:25px;
+    margin-bottom: 1px;
+
+}
+.courseButton:hover{
+    text-decoration: none;
+}
+
+.student-list{
+    /*background: red;*/
+    padding-left: 0px;
+}

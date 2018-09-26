@@ -1,0 +1,59 @@
+
+.filterBoxCourse a{
+    /*background: #fff;*/
+}
+
+.activeFilter{
+    background:  rgb(245, 245, 245);
+}
+.title{
+    text-align: center;
+    margin-top: -5px;
+    padding-bottom: 20px;
+    font-weight: 300;
+}
+.eventText{
+    color: rgb(51, 51, 51);
+
+}/*NOTIFICATION OBJECT */
+
+
+
+/*$$$*/
+/*COURSE HEADER BOX*/
+.courseHeaderBox{
+    background: #f9f9f9;
+    padding: 20px;
+    margin-left: 68px;
+    margin-right: 68px;
+    margin-bottom: 20px;
+    color: inherit;
+    border: 1px solid #CCCCCC;
+}
+.courseHeaderBox a{
+    color: #1C71A4;
+}
+
+/*SMALL PARENT */
+.smallParent{
+    margin-top: 55px;
+}
+/*COURSE SETTINGS BOX */
+.courseSettingsBox{
+    /*background: yellow;*/
+    float: right;
+    max-width: 210px;
+    margin-top: -14px;
+    padding: 1em;
+}
+.courseSettingsBox ul{
+    list-style-type: none;
+    padding: 0;
+}
+.settingsText{
+    color: red;
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 15px;
+}
+

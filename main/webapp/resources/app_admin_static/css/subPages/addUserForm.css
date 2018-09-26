@@ -1,0 +1,120 @@
+/*DEFAULT SETTING*/
+.content{
+    /*padding-top: 10px;*/
+}
+body{
+    /*font-family: "Proxima Nova","Helvetica","Corbel",sans-serif;*/
+    font-size: 14px;
+    margin: 0;
+    color:  rgb(68, 68, 68);
+    line-height: 1.4;
+    overflow-y:scroll;
+    height: 100%;
+}
+
+/*BIG CARD CONTAINER BOX == PARENT */
+.bigCardContainerParent .bigCardContainer{
+    padding-top:20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 20px;
+
+}
+/*DEPENDENCIES*/
+.formTitleBox{
+    /*background: blue;*/
+    margin-bottom: 40px;
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+
+}
+.mainContainer h1{
+    font-size: 25px;
+    /*color: #111;*/
+    font-family: inherit;
+    font-weight: bold;
+}
+
+/*TEXT BOX*/
+/*input[type=email],input[type=password],input[type=text]*/
+.bigCardContainer  input[type=radio]{
+    /*width: 50%;*/
+}
+
+
+/*FORM*/
+.formBox{
+
+    width:70%;
+    margin:0 auto;
+    text-align:center;
+}
+
+/*FORM DIVIDER*/
+.formDivider{
+    min-height: 20px;
+    /*color: pink;*/
+    border-bottom: thin solid #DDDDDD;
+    border-bottom-width: 1px ;
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+
+
+/*HEADER*/
+
+/*SETTINGS BOX DEPENDENCIES */
+.smallCardContainerParent .bigCardContainer{
+   padding: 20px;
+    margin-top: 10px;
+    margin-bottom:20px;
+    min-height: 325px;
+    /*min-height: 280px;*/
+    /*min-width: 300px;*/
+    /*padding-top:20px;*/
+    /*padding-left: 10px;*/
+    /*padding-right: 50px;*/
+    /*padding-bottom: 20px;*/
+}
+.smallCardContainerParent .custm{
+    padding: 20px;
+    margin-top: 10px;
+    margin-bottom:20px;
+    min-height: 400px;
+}
+
+.smallCardContainerParent table {
+    /*table-layout: fixed;*/
+}
+
+.smallCardContainerParent td {
+    /*border: 1px solid;*/
+    /*width: calc(100%/2);*/
+}
+
+.smallCardContainerParent table{
+    margin-top: 20px;
+}
+
+.settingsTitleBox {
+    /*background: red;*/
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+
+.submitBtnBox{
+    width: 120px;
+    /*background: pink;*/
+    margin:0 auto;
+}
+
+
+.lastAddedUsersHeader{
+    border-bottom: 1px solid #ccc;
+}
+
+.staticD{
+    font-size: 18px;
+    font-weight: 500;
+}

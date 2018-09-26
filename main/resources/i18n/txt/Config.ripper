@@ -1,0 +1,13 @@
+>> native2ascii -encoding utf8
+
+>> C:\Users\apple\IdeaProjects\Cdai12\src\main\webapp\resources\txt\test.txt
+
+>>C:\Users\apple\IdeaProjects\Cdai12\src\main\webapp\resources\txt\output.txt
+
+
+>> native2ascii -encoding utf8 C:\Users\apple\IdeaProjects\Cdai12\src\main\webapp\resources\txt\test.txt C:\Users\apple\IdeaProjects\Cdai12\src\main\webapp\resources\txt\output.txt
+
+<new-execution>
+    >>native2ascii -encoding utf8 C:\Users\apple\IdeaProjects\Cdai12\src\main\resources\i18n\txt\test.txt C:\Users\apple\IdeaProjects\Cdai12\src\main\resources\i18n\txt\output.txt
+
+</new-execution>

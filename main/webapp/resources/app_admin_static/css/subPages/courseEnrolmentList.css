@@ -1,0 +1,16 @@
+.btn-success:hover{
+    background: rgb(0, 128, 0);
+}
+
+.btn-danger:hover{
+    background: 	#cc0d0d;
+}
+
+.mainCardContainer{
+    min-width: 400px;
+    overflow: auto;
+}
+
+.upcomingEventsContainer{
+    min-width: 300px;
+}

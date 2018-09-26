@@ -1,0 +1,286 @@
+
+
+
+resultSet.getInt("")
+        resultSet.getString("")
+
+
+
+
+
+     extends JdbcDaoSupport implements
+
+#############################################
+        String sql = "INSERT INTO class (class_name,intake_period,status,created_at,deleted_at)VALUES(?,?,?,?,?) ";
+==============================================================
+        int returnValue = getJdbcTemplate().update(
+        sql,
+        new Object[]{
+        newClass.getClassName(),
+        newClass.getIntakePeriod(),
+        newClass.getStatus(),
+        newClass.getCreatedAt(),
+        newClass.getDeletedAt()
+        }
+        );
+
+==============================================================
+        if(1 == returnValue)
+        return "# New Class>>> "+newClass.getClassName()+" CREATED SUCCESSFULLY ";
+        else
+        return "# CREATION FAILURE";
+######################################
+
+
+
+================================================================================
+
+
+        String sql = "INSERT INTO user(user_id,role_id,user_name,email,password,salt)VALUES(?,?,?,?,?,?) ";
+        int returnValue = getJdbcTemplate().update(
+        sql,
+        new Object[]{newUser.getUserId(),newUser.getRoleId(),newUser.getUserName(),newUser.getEmail(),newUser.getPassword(),newUser.getSalt()}
+        );
+        if(1 == returnValue)
+        return "# New Users>>>"+newUser.getUserName()+" Creation is SUCCESS";
+        else
+        return "# User Creation is FAILURE";
+
+
+
+
+===================================================================
+
+        import org.springframework.context.ApplicationContext;
+        import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+        import java.util.List;
+
+        import build.dao.;
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+        public static void main(String[] args){
+        run();
+        }
+
+
+
+        public static void run(){
+
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("config/spring_DatabaseMappings.xml");
+        ...Dao daoAccess = (...Dao) applicationContext.getBean("....Dao");
+
+        System.out.println("Run Ripper is prepping to Start ");
+
+
+        String confirmation
+        System.out.println("::>> " + confirmation );
+        }
+
+
+==================================
+        System.out.println("Run Ripper is prepping to Start ");
+        System.out.println("::>> " + confirmation );
+
+===================================
+        /**
+        * GETTING CURRENT DATETIME
+        */
+        java.util.Date dt = new java.util.Date();
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String currentTime = sdf.format(dt);
+        /**
+        * ------------------------
+        */
+
+
+
+
+======
+on update-->>
+        ALTER TABLE ucms.user
+        MODIFY COLUMN updated_at TIMESTAMP DEFAULT 0 ON UPDATE CURRENT_TIMESTAMP;
+
+---------------------
+
+>>testing injected paramters on frontend
+
+<c:if test="${empty testVar}">
+    var1 is empty or null.
+</c:if>
+<c:if test="${not empty testVar}">
+var1 is NOT empty or null.
+</c:if>
+
+<c:choose>
+<c:when test="${empty var1}">
+    var1 is empty or null.
+</c:when>
+<c:otherwise>
+    var1 is NOT empty or null.
+</c:otherwise>
+</c:choose>
+
+<c:out value="${empty var1 ? 'var1 is empty or null' : 'var1 is NOT empty or null'}" />
+
+
+======================
+ADD JSON
+        JSONArray notificationArray = new JSONArray();
+        JSONObject msgObject = new JSONObject();
+        msgObject.put("errorMsg","Error! something went wrong check inputted data");
+        msgObject.put("successMsg","Course Successfully Created!");
+        notificationArray.add(msgObject);
+==========================
+
+
+
+<downloadFileTech>
+>>https://www.mkyong.com/java/how-to-download-file-from-website-java-jsp/
+>>http://www.henryxi.com/display-pdf-in-spring-example
+>>http://javahonk.com/spring-mvc-download-files/
+>>http://forum.spring.io/forum/spring-projects/web/4847-controller-to-download-file
+>>http://howtodoinjava.com/spring/spring-mvc/spring-mvc-download-file-controller-example/
+>>http://howtodoinjava.com/spring/spring-mvc/spring-mvc-download-file-controller-example/
+>>http://www.codejava.net/frameworks/spring/spring-mvc-sample-application-for-downloading-files
+</downloadFileTech>
+
+<moreDownloadFileTech>
+>>http://websystique.com/springmvc/spring-mvc-4-file-download-example/
+>>http://howtodoinjava.com/spring/spring-mvc/spring-mvc-download-file-controller-example/
+>>http://javahonk.com/spring-mvc-pdf-download/
+>>http://memorynotfound.com/spring-mvc-download-file-examples/
+>>http://www.nurkiewicz.com/2015/06/writing-download-server-part-i-always.html
+>>http://www.technicalkeeda.com/spring-tutorials/how-to-download-file-using-spring-mvc
+>>http://www.codejava.net/frameworks/spring/spring-mvc-sample-application-for-downloading-files
+>>http://websystique.com/springmvc/spring-mvc-4-file-download-example/
+>>http://javahonk.com/spring-mvc-pdf-download/
+>>
+</moreDownloadFileTech>
+
+<icons>
+
+<li>
+    <div class="icon lightgreen">
+        <span class="doc-icon zip">⊡</span>
+        <span class="doc-type">ZIP</span>
+    </div>
+</li>
+<li>
+    <a href="#doc">
+        <div class="icon blue">
+            <span class="doc-icon doc">☰</span>
+            <span class="doc-type">DOC</span>
+        </div>
+        <div class="downloadText"> <span >Chapter 1</span></div>
+    </a>
+
+</li>
+
+<li>
+    <div class="icon darkgreen">
+        <span class="doc-icon spread">⊟</span>
+        <span class="doc-type">XLS</span>
+    </div>
+</li>
+</icons>
+
+
+<JSTLGettingURlParameter>
+${param.name}
+</JSTLGettingURlParameter>
+
+
+<getParamFromURIAndMakeQuery>
+>>http://localhost:8080/admin/view/course?courseId=9002
+
+<sql:setDataSource var = "snapshot" driver = "com.mysql.jdbc.Driver"
+                   url = "jdbc:mysql://localhost/ucms"
+                   user = "root"  password = "lani"/>
+
+<sql:query dataSource = "${snapshot}" var = "lessonContent">
+SELECT crl.lesson_id,crl.lesson_name,crl.description,crl.position
+FROM course_lesson crl
+WHERE crl.course_id = ?
+ORDER BY crl.position;
+<sql:param value="${param.courseId}" />
+
+studentTotal.rowsByIndex[0][0]
+</getParamFromURIAndMakeQuery>
+
+
+<button>
+#menu button animated on clik
+>>https://codepen.io/keefyboooo/pen/eNZogZ
+1>>https://codepen.io/Djordjee/pen/wGyRBy
+</button>
+
+<notificationBadges>
+>>https://codepen.io/Thibaut/pen/iHlCy?limit=all&page=2&q=notifications+
+</notificationBadges>
+<NotificationLists>
+
+>>https://codepen.io/jacopo/pen/grGDm
+
+
+</NotificationLists>
+
+
+
+<NotificationUIBuildDialogs>
+
+<welcomePopUpFirstTime>
+    >>https://codepen.io/jaeming/full/EwsqC/
+</welcomePopUpFirstTime>
+>>https://codepen.io/guuibayer/pen/ZWvBxr
+>>https://codepen.io/jexordexan/pen/zNGZed
+>>https://codepen.io/alexpivtorak/pen/ByJLoL
+#openning events
+>>https://codepen.io/koolhaus/pen/ajwcE
+>>https://codepen.io/alinum/pen/xqpRmJ
+#animation poup model
+>>https://codepen.io/BeanBaag/full/mMJqma/
+>>https://codepen.io/keirabui/pen/DIplF
+>https://codepen.io/banunn/pen/zkpHD
+>>https://codepen.io/ksantangelo/pen/ObyOaP
+>>https://codepen.io/roydigerhund/pen/ZQwJyj
+>>https://codepen.io/simeonoff/pen/QKYwba
+
+</NotificationUIBuildDialogs>
+
+<itemClickDetailModel>
+
+#image display
+1>>https://codepen.io/chhonmeily/pen/aOLQor
+
+</itemClickDetailModel>
+
+
+<PopUpBuilds>
+>>https://codepen.io/damianmuti/pen/GEZoeG
+>>https://codepen.io/bronsrobin/pen/Kitup
+>>https://codepen.io/hmps/pen/sCnbm
+
+
+</PopUpBuilds>
+
+<ToolTipsCustom>
+>>https://codepen.io/kieranfivestars/pen/gbOWbM?limit=all&page=2&q=pop+ups
+</ToolTipsCustom>
+
+
+
+
+
+
+
+
+
+
+
+
+

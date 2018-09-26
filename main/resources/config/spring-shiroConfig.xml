@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-3.2.xsd"
+       default-lazy-init="true">
+
+    <description>Shiro Configuration</description>
+
+
+    <bean id="systemAuthorizingRealm" class="com.cdai.security.SystemAuthorizingRealm"/>
+
+
+
+    <!--my current realm-->
+    <!-- Define the realm you want to use to connect to your back-end security datasource: -->
+    <bean id="myRealm" class="com.cdai.security.MyRealm">
+    </bean>
+    <!--link real to security manager -->
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!-- Single realm app.  If you have multiple realms, use the 'realms' property instead. -->
+        <property name="realm" ref="myRealm"/>
+        <!--06-11-2017 added catch manager -->
+        <property name="cacheManager" ref="shiroEhcacheManager" />
+    </bean>
+
+
+<!--config filters 01-09-2017:06:28AM-->
+
+    <!--config filters 01-09-2017:06:28AM-->
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="/" />
+        <!--<property name="loginUrl" value="/login" />-->
+        <!--<property name="successUrl" value="/admin/dashboard" />-->
+        <property name="unauthorizedUrl" value="/403" />
+        <property name="filters">
+            <map>
+                <entry key="roles">
+                    <bean class="com.cdai.security.CustomRolesAuthorizationFilter"/>
+                </entry>
+            </map>
+
+        </property>
+
+        <property name="filterChainDefinitions">
+            <value>
+                # some example chain definitions: https://shiro.apache.org/web.html
+                /admin/** = authc,roles["admin,teacher"]
+                /** = anon
+                /student/** = authc,roles["student"]
+                # more URL-to-FilterChain definitions here  ;;authc
+            </value>
+        </property>
+    </bean>
+
+    <bean id="staticRealm" class="org.apache.shiro.realm.text.TextConfigurationRealm" init-method="processDefinitions">
+        <property name="userDefinitions">
+            <value>
+                lani = lani, admin
+                jsmith = jsmithsPassword, manager, engineer, employee
+                abrown = abrownsPassword, qa, employee
+                djones = djonesPassword, qa, contractor
+                guest = guestPassword
+            </value>
+        </property>
+        <property name="roleDefinitions">
+            <value>
+                admin = *
+                schwartz = lightsaber:*
+                goodguy = winnebago:drive:eagle5
+            </value>
+        </property>
+    </bean>
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!-- AOP式方法级权限检查  -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">
+        <property name="proxyTargetClass" value="true" />
+    </bean>
+
+    <!-- Enable Shiro Annotations for Spring-configured beans.  Only run after -->
+    <!-- the lifecycleBeanProcessor has run: -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!-- Secure Spring remoting:  Ensure any Spring Remoting method invocations -->
+    <!-- can be associated with a Subject for security checks. -->
+    <bean id="secureRemoteInvocationExecutor" class="org.apache.shiro.spring.remoting.SecureRemoteInvocationExecutor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!-- 用户授权/认证信息Cache, 采用EhCache 缓存 -->
+    <bean id="shiroEhcacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:config/ehcache-shiro.xml" />
+    </bean>
+
+
+
+
+
+
+</beans>
+
+
+
+
+
+
+
+
+<!--<res>-->
+<!--&gt;>https://stackoverflow.com/questions/7743749/shiro-authorization-permission-check-using-annotation-not-working-->
+<!--</res>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!--&lt;!&ndash;new&ndash;&gt;-->
+        <!--&lt;!&ndash;my current realm&ndash;&gt;-->
+        <!--&lt;!&ndash; Define the realm you want to use to connect to your back-end security datasource: &ndash;&gt;-->
+<!--<bean id="myRealm" class="com.cdai.security.MyRealm">-->
+<!--</bean>-->
+        <!--&lt;!&ndash;link real to security manager &ndash;&gt;-->
+<!--<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">-->
+<!--&lt;!&ndash; Single realm app.  If you have multiple realms, use the 'realms' property instead. &ndash;&gt;-->
+<!--<property name="realm" ref="myRealm"/>-->
+<!--</bean>-->
+<!--<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>-->
+
+        <!--&lt;!&ndash; AOP式方法级权限检查  &ndash;&gt;-->
+        <!--&lt;!&ndash; Enable Shiro Annotations for Spring-configured beans.  Only run after &ndash;&gt;-->
+        <!--&lt;!&ndash; the lifecycleBeanProcessor has run: &ndash;&gt;-->
+<!--<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor">-->
+<!--<property name="proxyTargetClass" value="true" />-->
+<!--</bean>-->
+<!--<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">-->
+<!--<property name="securityManager" ref="securityManager"/>-->
+<!--</bean>-->
+
+        <!--&lt;!&ndash; Secure Spring remoting:  Ensure any Spring Remoting method invocations can be associated-->
+         <!--with a Subject for security checks. &ndash;&gt;-->
+<!--<bean id="secureRemoteInvocationExecutor" class="org.apache.shiro.spring.remoting.SecureRemoteInvocationExecutor">-->
+<!--<property name="securityManager" ref="securityManager"/>-->
+<!--</bean>-->
+        <!--&lt;!&ndash; ... &ndash;&gt;-->
+
+        <!--&lt;!&ndash; Enable Shiro Annotations for Spring-configured beans.  Only run after &ndash;&gt;-->
+        <!--&lt;!&ndash; the lifecycleBeanProcessor has run: &ndash;&gt;-->
+        <!--&lt;!&ndash;<bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator" depends-on="lifecycleBeanPostProcessor"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">&ndash;&gt;-->
+        <!--&lt;!&ndash;<property name="securityManager" ref="securityManager"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;</bean>&ndash;&gt;-->
+
+
+        <!--&lt;!&ndash;config filters 01-09-2017:06:28AM&ndash;&gt;-->
+
+        <!--&lt;!&ndash;config filters 01-09-2017:06:28AM&ndash;&gt;-->
+
+<!--<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">-->
+<!--<property name="securityManager" ref="securityManager"/>-->
+<!--<property name="loginUrl" value="/login" />-->
+<!--<property name="successUrl" value="/dashboard" />-->
+<!--<property name="unauthorizedUrl" value="/error" />-->
+<!--<property name="filterChainDefinitions">-->
+    <!--<value>-->
+        <!--# some example chain definitions:-->
+        <!--/admin/** = authc, roles[admin]-->
+        <!--/docs/** = authc, perms[document:read]-->
+        <!--/** = authc-->
+        <!--# more URL-to-FilterChain definitions here-->
+    <!--</value>-->
+<!--</property>-->
+<!--</bean>-->

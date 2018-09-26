@@ -1,0 +1,51 @@
+
+
+
+
+
+
+
+
+/*----------  sort or filter grades container   ----------*/
+
+.sortGradesBox{
+    min-height: 300px;
+}
+
+
+
+
+/*=============================================
+=            overView Grade table            =
+=============================================*/
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: thin solid rgb(221,221,221);
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color:  rgba(35,107,166,1);
+    color: #111;
+}
+
+
+.gradeText{
+    color: #111;
+}
+/*=====  End of overView Grade table  ======*/
+
+

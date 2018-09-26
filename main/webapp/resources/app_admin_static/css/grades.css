@@ -1,0 +1,59 @@
+
+.bigCardContainer{
+    background: inherit;
+}
+
+h1{
+    color: red;
+}
+
+.selectBox{
+    height: 50px;
+
+}
+
+.divider{
+    height:1px;
+    margin-bottom: 15px;
+    border-bottom: thin solid #DDDDDD;
+    border-bottom-width:1px ;
+}
+
+
+.submitBtnBox{
+    width: 120px;
+    /*background: pink;*/
+    margin:0 auto;
+}
+
+
+/*---------*/
+.editText{
+    color: inherit;
+}
+
+.modal-content{
+    background: #f8f8f8;
+}
+
+.recordeform{
+    /*background: blue;*/
+    padding: 10px;
+}
+.recordeform select{
+    height: 30px;
+    padding: 0;
+}
+.recordeform label{
+    margin: 0;
+    padding: 0;
+}
+
+.subBtn{
+    /*background: red;*/
+    border-top: thin solid #DDDDDD;
+    padding-top: 15px;
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+}

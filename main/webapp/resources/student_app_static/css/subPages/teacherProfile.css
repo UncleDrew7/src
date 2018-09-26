@@ -1,0 +1,188 @@
+.aboutCardContainer{
+    height: 152px;
+    margin-bottom: 40px;
+}
+.requestCardContainer{
+    min-height: 150px;
+    height: auto;
+}
+
+.tab-content{
+    /*background: yellow;*/
+    max-height: 510px;
+    min-height: 500px;
+    overflow: hidden;
+    overflow-y: scroll;
+
+}
+table a{
+    color: #1C71A4;
+}
+/*PROFILE CONTAINER*/
+.profileContainer{
+
+    min-height: 300px;
+    width: 100%;
+    /*background: pink;*/
+    /*border-style: dotted;*/
+    /*border-width:2px ;*/
+    /*border-color: pink;*/
+    padding-bottom:20px ;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.profileContainer img {
+    width: 200px;
+    height: 200px;
+}
+
+/*MEDIA BODY*/
+.media-body {
+    /*background: pink;*/
+    padding-left: 20px;
+    /*margin-left: 20px;*/
+}
+
+/*FORM TITLE BOX*/
+.formTitleBox{
+    /*margin-bottom: 10px;*/
+    height: 62px;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    padding-top:10px;
+    padding-left: 20px;
+
+}
+td{
+    height: 60px;
+    width: 33.3%;
+    /*vertical-align:middle;*/
+    /*border:1px solid red;*/
+}
+.badge-danger{
+    background:#c53118;
+}
+.enrolled{
+    display: none;
+}
+#hide{
+    display: none;
+}
+.badge-success{
+    background: 	#0b690d;
+}
+.divClass {
+    margin-top:auto;
+}
+.smallCardBox a{
+    color: inherit;
+}
+
+.link{
+    color: blue;
+    /*position: absolute;absolute*/
+    float: right;
+    clear: both;
+    cursor: pointer;
+}
+
+.roleTitle{
+    text-align: center;
+    /*position: absolute;*/
+}
+
+/*DEGREE TYPE TEXT*/
+.degreeTypeText{
+    float:right;
+    clear: both;
+}
+
+/*------------------------*/
+/*-----CURRENT COURSES LIST----*/
+
+ul.list{
+    list-style-type: none;
+    margin: 0;
+    padding: 10px;
+
+}
+
+.hidden {
+    display: flex;
+}
+
+.toggle {
+    width: 46px;
+    height: 46px;
+    margin: 16px auto;
+    background-color: #FED36A;
+    border-radius: 100%;
+    cursor: pointer;
+    box-shadow: 3px 3px 0 0 #4E2266;
+}
+.toggle:hover {
+    background-color: #FFDD89;
+}
+.toggle:active {
+    box-shadow: 1px 1px 0 0 #4E2266;
+    -webkit-transform: scale(0.95);
+    transform: scale(0.95);
+}
+.toggle.off {
+    background-color: #bbb;
+}
+.toggle.off:hover {
+    background-color: #ddd;
+}
+
+.list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.item {
+    padding: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 60px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    /*border-bottom: 1px solid black;*/
+    /*border-top: 1px solid black;*/
+    /*-webkit-transition: box-shadow 0.3s, -webkit-transform 0.1s;*/
+    /*transition: box-shadow 0.3s, -webkit-transform 0.3s;*/
+    /*transition: transform 0.3s, box-shadow 0.3s;*/
+    /*transition: transform 0.1s, box-shadow 0.3s, -webkit-transform 0.3s;*/
+    background-color: #F8F8F8;
+}
+.item:nth-child(even) {
+    background-color: transparent;
+}
+.item:hover {
+    /*-webkit-transform: scale3d(1.01, 1.15, 1);*/
+    transform: scale(1.03);
+    /*box-shadow: 0 3px 0 rgba(42, 104, 153, 0.15);*/
+    position: relative;
+    z-index: 100;
+}
+/*.item:active {*/
+/*-webkit-transform: scale3d(1.01, 1.05, 1);*/
+/*transform: scale3d(1.01, 1.05, 1);*/
+/*}*/
+.grow { transition: all .2s ease-in-out; }
+.grow:hover { transform: scale(1.1); }
+
+
+/*======================*/
+.g-info  {
+    background-color: rgb(217, 237, 247);
+    border-color: rgb(188, 232, 241);
+    color: rgb(49, 112, 143);
+}
+.g-warning {
+    background-color: #fcf8e3;
+    border-color: #faebcc;
+    color: #8a6d3b;
+}

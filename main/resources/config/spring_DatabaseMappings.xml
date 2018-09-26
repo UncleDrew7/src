@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+    <!-- to activate annotations in beans already registered in the application context -->
+    <context:annotation-config />
+
+
+    <!-- scans packages to find and register beans within the application context -->
+    <!--build-->
+    <context:component-scan base-package="build.dao.impl"/>
+
+
+    <!-- employeeDAO bean with dataSource setter-injection -->
+    <!--https://docs.spring.io/spring/docs/current/spring-framework-reference/html/jdbc.html-->
+    <!--EventsDao-->
+    <bean id="EventsDao" class="build.dao.impl.EventsDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--SemesterDao-->
+    <bean id="SemesterDao" class="build.dao.impl.SemesterDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--LogHistory-->
+    <bean id="LogHistoryDao" class="build.dao.impl.LogHistoryDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--LessonUploads-->
+    <bean id="LessonUploadsDao" class="build.dao.impl.LessonUploadsDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--CourseLesson-->
+    <bean id="CourseLessonDao" class="build.dao.impl.CourseLessonDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--SearchCoursesAndExamsDao-->
+    <bean id="SearchCoursesAndExamsDao" class="build.dao.impl.SearchCoursesAndExamsDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--NewsNotificationsDao-->
+    <bean id="NewsNotificationsDao" class="build.dao.impl.NewsNotificationsDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--ExamStudentRequestEnrolmentDao-->
+    <bean id="ExamStudentRequestEnrolmentDao" class="build.dao.impl.ExamStudentRequestEnrolmentDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--ExamEnrolmentDao-->
+    <bean id="ExamEnrolmentDao" class="build.dao.impl.ExamEnrolmentDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--GradeDao-->
+    <bean id="GradeDao" class="build.dao.impl.GradeDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--GradeItems-->
+    <bean id="GradeItemsDao" class="build.dao.impl.GradeItemsDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--Exam-->
+    <bean id="ExamDao" class="build.dao.impl.ExamDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--Role-->
+    <bean id="roleDao" class="build.dao.impl.RoleDaoImpl" >
+    <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <!--User-->
+    <bean id="userDao" class="build.dao.impl.UserDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ClassDao" class="build.dao.impl.ClassDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="CourseEnrolmentDao" class="build.dao.impl.CourseEnrolmentDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="CoursesDao" class="build.dao.impl.CoursesDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="LogAccessDao" class="build.dao.impl.LogAccessDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="StudentClassDao" class="build.dao.impl.StudentClassDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="StudentCourseEnrolmentDao" class=" build.dao.impl.StudentCourseEnrolmentDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="StudentCoursesDao" class="build.dao.impl.StudentCoursesDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="UserProfileDao" class="build.dao.impl.UserProfileDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="NewsNotificationsUploadsDao" class="build.dao.impl.NewsNotificationsUploadsDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="StudentMajorDao" class="build.dao.impl.StudentMajorDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="MajorDao" class="build.dao.impl.MajorDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ClassMajorDao" class="build.dao.impl.ClassMajorDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ParentCoursesDao" class="build.dao.impl.ParentCoursesDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ParentCourseChildCoursesDao" class="build.dao.impl.ParentCourseChildCoursesDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ParentCoursesMajorDao" class="build.dao.impl.ParentCoursesMajorDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ChildCourseSemesterDao" class="build.dao.impl.ChildCourseSemesterDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ChildCoursesDao" class="build.dao.impl.ChildCoursesDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="ChildCoursesTeachersDao" class="build.dao.impl.ChildCoursesTeachersDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+    <bean id="GradeScoreTypeDao" class="build.dao.impl.GradeScoreTypeDaoImpl" >
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+
+
+    <context:property-placeholder location="classpath:/properties/database.properties"/>
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="${database.driver}" />
+        <property name="url" value="${database.url}" />
+        <property name="username" value="${database.username}" />
+        <property name="password" value="${database.password}" />
+    </bean>
+
+
+
+    <!--&lt;!&ndash;dataSource configuration for spring dao v4  &ndash;&gt;-->
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+        <!--<property name="url" value="jdbc:mysql://localhost:3306/cdai" />-->
+        <!--<property name="username" value="root" />-->
+        <!--<property name="password" value="lani" />-->
+    <!--</bean>-->
+
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+        <!--<property name="driverClassName" value="com.mysql.jdbc.Driver" />-->
+        <!--<property name="url" value="jdbc:mysql://192.168.10.30:3306/ucms" />-->
+        <!--<property name="username" value="root" />-->
+        <!--<property name="password" value="cdai" />-->
+    <!--</bean>-->
+
+</beans>
+
+        <!--spring dao v4 using this-->

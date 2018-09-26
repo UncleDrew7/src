@@ -1,0 +1,79 @@
+
+.content{
+    overflow-x: hidden;
+}
+.imageBox{
+    height: 100px;
+    width: 150px;
+    background: pink;
+    margin:0 auto;
+}
+
+.imgGroup{
+    padding-bottom: 30px;
+}
+
+.imgGroup a{
+    color: inherit;
+}
+
+.imgGroup a:hover {
+    color: blue;
+}
+
+
+/*IMAGE BOX*/
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css);
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+.uploadButton {
+    opacity: 0;
+    display: inline-table;
+    height: 100px;
+    width: 100px;
+    cursor: pointer;
+    padding-top: 36px;
+    line-height: 17px;
+    border: 2px dashed #a3a3a3;
+    background: #eaeaea;
+    font-size: .9em;
+    /*margin-left: -75px;*/
+    position: absolute;
+    top: 0;
+}
+
+.imgGroup img {
+    /*position: absolute;*/
+    /*margin-left: -75px;*/
+    /*top: 0;*/
+    /*right: auto;*/
+    width: 150px;
+    height: 100px;
+}
+
+/*IMAGE BOX*/
+
+.submitBtnBox{
+    width: 120px;
+    /*background: pink;*/
+    margin:0 auto;
+}
+
+
+/*SMALL CARD CONTAINER */
+.smallCardContainerParent .bigCardContainer{
+
+    min-height: 400px;
+
+}
+
+.wrapper{
+    margin-left: 4%;
+    margin-top: -20px;
+}
+
